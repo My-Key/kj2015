@@ -47,11 +47,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\BackgroundParallax.cs" />
+     <Compile Include="Assets\Scripts\BaseAvatar.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\FollowPlayer.cs" />
      <Compile Include="Assets\Scripts\Pauser.cs" />
      <Compile Include="Assets\Scripts\PlayerControl.cs" />
      <Compile Include="Assets\Scripts\PoolManager.cs" />
+     <Compile Include="Assets\Scripts\Projectile.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
