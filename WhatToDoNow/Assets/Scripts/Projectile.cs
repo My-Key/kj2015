@@ -4,7 +4,7 @@ using System.Collections;
 public class Projectile : MonoBehaviour {
 
     public float speed = 20f;
-    public bool spawned = false;
+
 
     public GameObject m_DamagePrefab;
     public AudioClip m_destoryClip;
@@ -15,32 +15,39 @@ public class Projectile : MonoBehaviour {
     int damage = 10;
 
     float time = 0;
+    bool m_facingRight = true;
 
-    
+    bool isKnife = false;
+
 
     public void Spawn(Owner owner, int damage, bool facingRight)
     {
+        time = 0;
         this.owner = owner;
         this.damage = damage;
 
+        if (m_facingRight != facingRight)
+        {
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        }
+
         if (!facingRight)
+        {
             rigidbody2D.velocity = new Vector2(-speed, 0);
+            m_facingRight = false;
+        }
         else
             rigidbody2D.velocity = new Vector2(speed, 0);
-
     }
 
-    void Start () 
+    void OnTriggerEnter2D(Collider2D other)
     {
-        spawned = false;
-        time = 0;
-    }
-
-    void OnCollisionEnter2D(Collision2D coll)
-    {
-        BaseAvatar avatar = coll.transform.GetComponent<BaseAvatar>();
+        
+        BaseAvatar avatar = other.transform.GetComponent<BaseAvatar>();
         if (avatar)
         {
+            if (avatar.m_Owner == owner)
+                return;
             avatar.Damage(owner, damage);
         }
         ProcessDestory();
@@ -52,6 +59,10 @@ public class Projectile : MonoBehaviour {
             PoolManager.Instantiate(m_DamagePrefab, transform.position, Quaternion.identity);
         if (m_destoryClip)
             AudioSource.PlayClipAtPoint(m_destoryClip, transform.position);
+        if (isKnife)
+            collider2D.enabled = false;
+        else
+            PoolManager.Destroy(this.gameObject);
     }
 
     void Update()
@@ -59,5 +70,11 @@ public class Projectile : MonoBehaviour {
         time += Time.deltaTime;
         if (time >= m_TimeToDestory)
             ProcessDestory();
+    }
+
+    public void UseKnife(Owner owner, int damage)
+    {
+        isKnife = true;
+        collider2D.enabled = true;
     }
 }

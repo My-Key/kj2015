@@ -3,6 +3,7 @@ using System.Collections;
 
 public class BaseAvatar : MonoBehaviour {
 
+    public int m_MaxHP = 100;
     public int m_HP = 100;
     public Owner m_Owner = Owner.Enemy;
 
@@ -11,6 +12,10 @@ public class BaseAvatar : MonoBehaviour {
     public float moveForce = 365f;
     public float maxSpeed = 5f;
     public float jumpForce = 1000f;
+
+    public Transform m_BulletSpawn;
+    public Projectile m_KnifeSpawn;
+
     public int m_meeleDamage = 10;
     
     public GameObject rocket;
@@ -24,6 +29,13 @@ public class BaseAvatar : MonoBehaviour {
     public Animator m_anim;
     public float m_MoveValue = 0;
 
+    public GameObject m_HealthBar;
+
+    public virtual void Awake()
+    {
+        groundCheck = transform.Find("groundCheck");
+        m_anim = GetComponent<Animator>();
+    }
 
     public virtual void Update()
     {
@@ -61,8 +73,15 @@ public class BaseAvatar : MonoBehaviour {
 
     public void FireWeapon()
     {
-        GameObject bullet = PoolManager.Instantiate(rocket, transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
+        GameObject bullet = PoolManager.Instantiate(rocket, m_BulletSpawn.position, Quaternion.Euler(new Vector3(0, 0, 0)));
         bullet.GetComponent<Projectile>().Spawn(m_Owner, m_weaponDamage, facingRight);
+    }
+
+
+
+    public void UseKnife ()
+    {
+        m_KnifeSpawn.UseKnife(m_Owner, m_weaponDamage);
     }
 
 
@@ -73,6 +92,12 @@ public class BaseAvatar : MonoBehaviour {
             return;
 
         m_HP -= damage;
+
+        if (m_HP <= 0)
+        {
+            m_HP = 0;
+        }
+
         ProcessDamage();
     }
 
@@ -80,6 +105,8 @@ public class BaseAvatar : MonoBehaviour {
 
     public virtual void ProcessDamage()
     {
+        Debug.Log("ProcessDamage " + m_HP);
+        UpdateHPBar();
         if (m_HP <= 0)
         {
             DeadAnim();
@@ -88,23 +115,38 @@ public class BaseAvatar : MonoBehaviour {
             DamageAnim();
     }
 
+    void UpdateHPBar()
+    {
+        float hpClampt = 0;
+        
+        if(m_HP!= 0)
+            hpClampt = (float)m_HP / (float)m_MaxHP;
 
+
+        m_HealthBar.transform.localScale = new Vector3(hpClampt, 1f, 1f);
+    }
+
+    
 
     public virtual void DeadAnim()
     {
-        AnimationClip ac = m_anim.animation.GetClip("Dead");
+        Debug.Log("DeadAnim");
+        /*AnimationClip ac = m_anim.animation.GetClip("Dead");
         if (ac)
-            m_anim.Play("Dead");
+            m_anim.Play("Dead");*/
     }
 
 
 
     public virtual void DamageAnim()
     {
-        AnimationClip ac = m_anim.animation.GetClip("Damage");
+        Debug.Log("DamageAnim");
+       /* AnimationClip ac = m_anim.animation.GetClip("Damage");
         if (ac)
-            m_anim.Play("Damage");
+            m_anim.Play("Damage");*/
     }
+
+
 
 }
 

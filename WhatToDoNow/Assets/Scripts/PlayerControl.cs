@@ -4,23 +4,18 @@ using System.Collections;
 public class PlayerControl : BaseAvatar
 {
 
-	void Awake()
-	{
-		groundCheck = transform.Find("groundCheck");
-		m_anim = GetComponent<Animator>();
-        m_Owner = Owner.Player;
-	}
-
 
 	public override void Update()
 	{
         base.Update();
 
-        if (Input.GetKeyDown(KeyCode.W) && grounded)
+        if (Input.GetKeyDown(KeyCode.Space) && grounded)
             Jump();
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.E))
             FireWeapon();
+        if (Input.GetKeyDown(KeyCode.F))
+            UseKnife();
 	}
 
 
