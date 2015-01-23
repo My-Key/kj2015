@@ -3,9 +3,8 @@ using System.Collections;
 
 public class Projectile : MonoBehaviour {
 
+    public int shakeID = 0; 
     public float speed = 20f;
-
-
     public GameObject m_DamagePrefab;
     public AudioClip m_destoryClip;
 
@@ -17,11 +16,16 @@ public class Projectile : MonoBehaviour {
     float time = 0;
     bool m_facingRight = true;
 
-    bool isKnife = false;
+    public bool isKnife = false;
+
+    bool knifeInUse = false;
+
+    bool isSpawn = false;
 
 
     public void Spawn(Owner owner, int damage, bool facingRight)
     {
+        isSpawn = true;
         time = 0;
         this.owner = owner;
         this.damage = damage;
@@ -55,26 +59,41 @@ public class Projectile : MonoBehaviour {
 
     void ProcessDestory()
     {
+        
+        Debug.Log("SHAKE", gameObject);
+        CameraShake.instance.ShakeCamera(shakeID);
         if (m_DamagePrefab)
             PoolManager.Instantiate(m_DamagePrefab, transform.position, Quaternion.identity);
         if (m_destoryClip)
             AudioSource.PlayClipAtPoint(m_destoryClip, transform.position);
+        isSpawn = false;
         if (isKnife)
+        {
             collider2D.enabled = false;
+            knifeInUse = false;
+        }
         else
             PoolManager.Destroy(this.gameObject);
+
     }
 
     void Update()
     {
-        time += Time.deltaTime;
-        if (time >= m_TimeToDestory)
-            ProcessDestory();
+        if (isSpawn)
+        {
+            time += Time.deltaTime;
+            if (time >= m_TimeToDestory)
+                ProcessDestory();
+        }
     }
 
     public void UseKnife(Owner owner, int damage)
     {
-        isKnife = true;
+        if (knifeInUse)
+            return;
+        isSpawn = true;
+        time = 0;
+        knifeInUse = true;
         collider2D.enabled = true;
     }
 }

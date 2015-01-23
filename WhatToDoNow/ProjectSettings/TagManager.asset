@@ -27,8 +27,8 @@ TagManager:
   User Layer 11: Pickups
   User Layer 12: Ground
   User Layer 13: Background
-  User Layer 14: 
-  User Layer 15: 
+  User Layer 14: Knifes
+  User Layer 15: 3DUI
   User Layer 16: 
   User Layer 17: 
   User Layer 18: 
@@ -44,7 +44,7 @@ TagManager:
   User Layer 28: 
   User Layer 29: 
   User Layer 30: 
-  User Layer 31: 
+  User Layer 31: UIMAIN
   m_SortingLayers:
   - name: Default
     userID: 0

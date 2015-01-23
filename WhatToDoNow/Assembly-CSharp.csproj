@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\PlayerControl.cs" />
      <Compile Include="Assets\Scripts\PoolManager.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
+     <Compile Include="Assets\Scripts\UICharacterManager.cs" />
      <None Include="Assets\DOTween\DOTween46.xml" />
      <None Include="Assets\DOTween\readme.txt" />
      <None Include="Assets\DOTween\DOTween43.xml" />
