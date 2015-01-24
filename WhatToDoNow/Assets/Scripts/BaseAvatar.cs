@@ -118,12 +118,17 @@ public class BaseAvatar : MonoBehaviour {
     void UpdateHPBar()
     {
         float hpClampt = 0;
-        
-        if(m_HP!= 0)
+
+        if (m_HP != 0)
             hpClampt = (float)m_HP / (float)m_MaxHP;
 
-
-        m_HealthBar.transform.localScale = new Vector3(hpClampt, 1f, 1f);
+        if (m_Owner == Owner.Enemy )
+            m_HealthBar.transform.localScale = new Vector3(hpClampt, 1f, 1f);
+        else if (m_Owner == Owner.Player)
+        {
+            UICharacterManager.instance.UpdateStatus(hpClampt);
+        }
+        
     }
 
     

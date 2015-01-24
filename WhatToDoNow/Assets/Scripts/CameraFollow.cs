@@ -9,14 +9,7 @@ public class CameraFollow : MonoBehaviour
 	public float ySmooth = 8f;		// How smoothly the camera catches up with it's target movement in the y axis.
 
 
-	private Transform player;		// Reference to the player's transform.
-
-
-	void Awake ()
-	{
-		// Setting up the reference.
-		player = GameObject.FindGameObjectWithTag("Player").transform;
-	}
+	public Transform player;		// Reference to the player's transform.
 
 
 	bool CheckXMargin()
@@ -35,7 +28,8 @@ public class CameraFollow : MonoBehaviour
 
 	void FixedUpdate ()
 	{
-		TrackPlayer();
+        if (player)
+		    TrackPlayer();
 	}
 	
 	

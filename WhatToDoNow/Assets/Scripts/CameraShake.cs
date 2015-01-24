@@ -12,8 +12,6 @@ public class CameraShake : MonoBehaviour
 	void Start ()
     {
         instance = this;
-        DOTween.Init(true, true, LogBehaviour.ErrorsOnly);
-        
 	}
 	
 	public void ShakeCamera(int id)
@@ -24,6 +22,11 @@ public class CameraShake : MonoBehaviour
             camera.DOShakePosition(shakeData[id].duration, shakeData[id].strength, shakeData[id].vibrato, shakeData[id].randomness);
             
         }
+    }
+
+    void OnDestroy()
+    {
+        instance = null;
     }
 
     
