@@ -44,18 +44,48 @@ public class Boardmanager : MonoBehaviour {
         return item;
     }
 
-    public void ResetItems
+    public void ResetItems()
     {
         for (int i = 0; i < items.Count; i++)
 		{
-			 
+			 items[i].available = true;
 		}
     }
-}
 
+    public void RollSeen()
+    {
+
+    }
+
+
+}
+[System.Serializable]
 public class Room
 {
-    List<bool>
+    public int availablePlaces = 3;
+    public int availableCards = 3;
+
+    public List<bool> place;
+    public List<int> cardList;
+
+    public void ResetRoom()
+    {
+        for (int i = 0; i < place.Count; i++)
+        {
+            place[i] = false;
+        }
+        for (int i = 0; i < cardList.Count; i++)
+        {
+            cardList[i] = -1;
+        }
+        UpdateRoom();
+    }
+
+    public void UpdateRoom()
+    {
+
+    }
+
 }
 
 
