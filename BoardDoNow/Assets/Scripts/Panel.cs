@@ -11,14 +11,14 @@ public class Panel : MonoBehaviour {
     public float m_ShowTime = 2f;
     public float m_HideTime = 2f;
 
-    public void Show(bool fade)
+    public virtual void Show(bool fade)
     {
         m_Panel.gameObject.SetActive(true);
         m_Panel.DOLocalMove(m_EndPosition, m_ShowTime);
         if (fade)
             GameManager.instance.Fade(0.8f, 1f);
     }
-    public void Hide(bool fade)
+    public virtual void Hide(bool fade)
     {
         m_Panel.DOLocalMove(m_StartPosition, m_HideTime);
         StartCoroutine(HideObject(fade));

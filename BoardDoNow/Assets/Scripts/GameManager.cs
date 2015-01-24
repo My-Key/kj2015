@@ -60,7 +60,6 @@ public class GameManager : MonoBehaviour
     {
         m_StartGamePanel.Hide(false);
         StartCoroutine(InitializeGame());
-        
     }
 
 
@@ -71,10 +70,9 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         m_Manor.SetActive(false);
         m_Board.gameObject.SetActive(true);
-
-
-
         GameManager.instance.Fade(0f, 2f);
+        yield return new WaitForSeconds(2f);
+        Boardmanager.instance.StartGame();
     }
 
 
