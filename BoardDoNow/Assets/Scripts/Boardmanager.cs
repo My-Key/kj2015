@@ -88,7 +88,14 @@ public class Boardmanager : MonoBehaviour {
             }
 
         }
+        Debug.Log("RollCrapyItem " + item);
         return item;
+    }
+
+    public void GiveBackCard(int id)
+    {
+        Debug.Log("GiveBackCard " + id + " available " + items[id].available);
+        items[id].available = true;
     }
     
 
@@ -148,7 +155,7 @@ public class Boardmanager : MonoBehaviour {
                 m_RoomsList[i].RollCards();
             }
 
-            m_RollPanel.Show(false);
+            m_RollPanel.Show(true);
         }
     }
 

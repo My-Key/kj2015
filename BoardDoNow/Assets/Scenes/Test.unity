@@ -5803,350 +5803,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1873365998}
   m_GameObject: {fileID: 801374907}
---- !u!1001 &801642228
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 119.457298
-      objectReference: {fileID: 0}
-    - target: {fileID: 485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 225.713898
-      objectReference: {fileID: 0}
-    - target: {fileID: 485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 1.875
-      objectReference: {fileID: 0}
-    - target: {fileID: 485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: diceGreenOBj
-      value: 
-      objectReference: {fileID: 1756760984}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: diceRedOBj
-      value: 
-      objectReference: {fileID: 1342354053}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomPicker.Array.data[0]
-      value: 
-      objectReference: {fileID: 1773816676}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomPicker.Array.data[1]
-      value: 
-      objectReference: {fileID: 342082448}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomPicker.Array.data[2]
-      value: 
-      objectReference: {fileID: 806519873}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_TurnText
-      value: 
-      objectReference: {fileID: 1125583117}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_ListOfPlayers.Array.data[0].m_scoreText
-      value: 
-      objectReference: {fileID: 1519130474}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_ListOfPlayers.Array.data[0].PawnGo.Array.data[0]
-      value: 
-      objectReference: {fileID: 1524915845}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_ListOfPlayers.Array.data[0].PawnGo.Array.data[1]
-      value: 
-      objectReference: {fileID: 2073072368}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_ListOfPlayers.Array.data[0].PawnGo.Array.data[2]
-      value: 
-      objectReference: {fileID: 870583556}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_ListOfPlayers.Array.data[0].childCardGO.Array.data[0]
-      value: 
-      objectReference: {fileID: 1894490294}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_ListOfPlayers.Array.data[0].ladyCardGO.Array.data[0]
-      value: 
-      objectReference: {fileID: 1689841820}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_ListOfPlayers.Array.data[0].ladyCardGO.Array.data[1]
-      value: 
-      objectReference: {fileID: 1445666759}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_ListOfPlayers.Array.data[0].manCardGO.Array.data[0]
-      value: 
-      objectReference: {fileID: 428216396}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_ListOfPlayers.Array.data[0].manCardGO.Array.data[1]
-      value: 
-      objectReference: {fileID: 1746832327}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_ListOfPlayers.Array.data[0].manCardGO.Array.data[2]
-      value: 
-      objectReference: {fileID: 914256661}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_ListOfPlayers.Array.data[1].m_scoreText
-      value: 
-      objectReference: {fileID: 903116361}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_ListOfPlayers.Array.data[1].PawnGo.Array.data[0]
-      value: 
-      objectReference: {fileID: 747505225}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_ListOfPlayers.Array.data[1].PawnGo.Array.data[1]
-      value: 
-      objectReference: {fileID: 1944584819}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_ListOfPlayers.Array.data[1].PawnGo.Array.data[2]
-      value: 
-      objectReference: {fileID: 212801275}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_ListOfPlayers.Array.data[2].m_scoreText
-      value: 
-      objectReference: {fileID: 925225743}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_ListOfPlayers.Array.data[2].PawnGo.Array.data[0]
-      value: 
-      objectReference: {fileID: 1531548320}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_ListOfPlayers.Array.data[2].PawnGo.Array.data[1]
-      value: 
-      objectReference: {fileID: 1433189516}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_ListOfPlayers.Array.data[2].PawnGo.Array.data[2]
-      value: 
-      objectReference: {fileID: 1347413353}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_ListOfPlayers.Array.data[3].m_scoreText
-      value: 
-      objectReference: {fileID: 789179155}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_ListOfPlayers.Array.data[3].PawnGo.Array.data[0]
-      value: 
-      objectReference: {fileID: 810367712}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_ListOfPlayers.Array.data[3].PawnGo.Array.data[1]
-      value: 
-      objectReference: {fileID: 1772888665}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_ListOfPlayers.Array.data[3].PawnGo.Array.data[2]
-      value: 
-      objectReference: {fileID: 722973158}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[0].placGO.Array.data[0]
-      value: 
-      objectReference: {fileID: 324508227}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[0].placGO.Array.data[1]
-      value: 
-      objectReference: {fileID: 976069700}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[0].placGO.Array.data[2]
-      value: 
-      objectReference: {fileID: 1524730924}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[0].cardGO.Array.data[0]
-      value: 
-      objectReference: {fileID: 1684510695}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[0].cardGO.Array.data[1]
-      value: 
-      objectReference: {fileID: 506396408}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[0].cardGO.Array.data[2]
-      value: 
-      objectReference: {fileID: 97640045}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[0].specialPlace
-      value: 
-      objectReference: {fileID: 684659471}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[1].placGO.Array.data[0]
-      value: 
-      objectReference: {fileID: 670875604}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[1].placGO.Array.data[1]
-      value: 
-      objectReference: {fileID: 199214062}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[1].placGO.Array.data[2]
-      value: 
-      objectReference: {fileID: 1581565212}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[1].cardGO.Array.data[0]
-      value: 
-      objectReference: {fileID: 336823933}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[1].cardGO.Array.data[1]
-      value: 
-      objectReference: {fileID: 243541757}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[1].cardGO.Array.data[2]
-      value: 
-      objectReference: {fileID: 738176654}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[1].specialPlace
-      value: 
-      objectReference: {fileID: 1129336393}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[2].placGO.Array.data[0]
-      value: 
-      objectReference: {fileID: 81112112}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[2].placGO.Array.data[1]
-      value: 
-      objectReference: {fileID: 1602658803}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[2].placGO.Array.data[2]
-      value: 
-      objectReference: {fileID: 123975159}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[2].cardGO.Array.data[0]
-      value: 
-      objectReference: {fileID: 1764946288}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[2].cardGO.Array.data[1]
-      value: 
-      objectReference: {fileID: 126534452}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[2].cardGO.Array.data[2]
-      value: 
-      objectReference: {fileID: 2091679727}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[2].specialPlace
-      value: 
-      objectReference: {fileID: 126143035}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[3].placGO.Array.data[0]
-      value: 
-      objectReference: {fileID: 1799606544}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[3].placGO.Array.data[1]
-      value: 
-      objectReference: {fileID: 362356437}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[3].placGO.Array.data[2]
-      value: 
-      objectReference: {fileID: 951240172}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[3].cardGO.Array.data[0]
-      value: 
-      objectReference: {fileID: 702803059}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[3].cardGO.Array.data[1]
-      value: 
-      objectReference: {fileID: 889746295}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[3].cardGO.Array.data[2]
-      value: 
-      objectReference: {fileID: 815648930}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[3].specialPlace
-      value: 
-      objectReference: {fileID: 607231019}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[4].placGO.Array.data[0]
-      value: 
-      objectReference: {fileID: 794092589}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[4].placGO.Array.data[1]
-      value: 
-      objectReference: {fileID: 462503666}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[4].placGO.Array.data[2]
-      value: 
-      objectReference: {fileID: 1275266476}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[4].cardGO.Array.data[0]
-      value: 
-      objectReference: {fileID: 1081002215}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[4].cardGO.Array.data[1]
-      value: 
-      objectReference: {fileID: 2069044282}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[4].cardGO.Array.data[2]
-      value: 
-      objectReference: {fileID: 1902847723}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[4].specialPlace
-      value: 
-      objectReference: {fileID: 589422647}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[5].placGO.Array.data[0]
-      value: 
-      objectReference: {fileID: 833785870}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[5].placGO.Array.data[1]
-      value: 
-      objectReference: {fileID: 682944314}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[5].placGO.Array.data[2]
-      value: 
-      objectReference: {fileID: 93641553}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[5].placGO.Array.data[3]
-      value: 
-      objectReference: {fileID: 1819339930}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[5].placGO.Array.data[4]
-      value: 
-      objectReference: {fileID: 135438990}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[5].placGO.Array.data[5]
-      value: 
-      objectReference: {fileID: 500961855}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[5].placGO.Array.data[6]
-      value: 
-      objectReference: {fileID: 1655988396}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[5].placGO.Array.data[7]
-      value: 
-      objectReference: {fileID: 1346053168}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[5].cardGO.Array.data[0]
-      value: 
-      objectReference: {fileID: 930362420}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RoomsList.Array.data[5].specialPlace
-      value: 
-      objectReference: {fileID: 1359317855}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: m_RollPanel
-      value: 
-      objectReference: {fileID: 184111785}
-    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-      propertyPath: cammerdinerGo
-      value: 
-      objectReference: {fileID: 436218539}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-  m_RootGameObject: {fileID: 1182310759}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
 --- !u!1 &806519873
 GameObject:
   m_ObjectHideFlags: 0
@@ -7314,6 +6970,350 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1873365998}
   m_GameObject: {fileID: 930362420}
+--- !u!1001 &937908241
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 119.457298
+      objectReference: {fileID: 0}
+    - target: {fileID: 485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 225.713898
+      objectReference: {fileID: 0}
+    - target: {fileID: 485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: diceGreenOBj
+      value: 
+      objectReference: {fileID: 1756760984}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: diceRedOBj
+      value: 
+      objectReference: {fileID: 1342354053}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomPicker.Array.data[0]
+      value: 
+      objectReference: {fileID: 1773816676}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomPicker.Array.data[1]
+      value: 
+      objectReference: {fileID: 342082448}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomPicker.Array.data[2]
+      value: 
+      objectReference: {fileID: 806519873}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_TurnText
+      value: 
+      objectReference: {fileID: 1125583117}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_ListOfPlayers.Array.data[0].m_scoreText
+      value: 
+      objectReference: {fileID: 1519130474}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_ListOfPlayers.Array.data[0].PawnGo.Array.data[0]
+      value: 
+      objectReference: {fileID: 1524915845}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_ListOfPlayers.Array.data[0].PawnGo.Array.data[1]
+      value: 
+      objectReference: {fileID: 2073072368}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_ListOfPlayers.Array.data[0].PawnGo.Array.data[2]
+      value: 
+      objectReference: {fileID: 870583556}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_ListOfPlayers.Array.data[0].childCardGO.Array.data[0]
+      value: 
+      objectReference: {fileID: 1894490294}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_ListOfPlayers.Array.data[0].ladyCardGO.Array.data[0]
+      value: 
+      objectReference: {fileID: 1689841820}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_ListOfPlayers.Array.data[0].ladyCardGO.Array.data[1]
+      value: 
+      objectReference: {fileID: 1445666759}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_ListOfPlayers.Array.data[0].manCardGO.Array.data[0]
+      value: 
+      objectReference: {fileID: 428216396}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_ListOfPlayers.Array.data[0].manCardGO.Array.data[1]
+      value: 
+      objectReference: {fileID: 1746832327}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_ListOfPlayers.Array.data[0].manCardGO.Array.data[2]
+      value: 
+      objectReference: {fileID: 914256661}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_ListOfPlayers.Array.data[1].m_scoreText
+      value: 
+      objectReference: {fileID: 903116361}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_ListOfPlayers.Array.data[1].PawnGo.Array.data[0]
+      value: 
+      objectReference: {fileID: 747505225}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_ListOfPlayers.Array.data[1].PawnGo.Array.data[1]
+      value: 
+      objectReference: {fileID: 1944584819}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_ListOfPlayers.Array.data[1].PawnGo.Array.data[2]
+      value: 
+      objectReference: {fileID: 212801275}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_ListOfPlayers.Array.data[2].m_scoreText
+      value: 
+      objectReference: {fileID: 925225743}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_ListOfPlayers.Array.data[2].PawnGo.Array.data[0]
+      value: 
+      objectReference: {fileID: 1531548320}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_ListOfPlayers.Array.data[2].PawnGo.Array.data[1]
+      value: 
+      objectReference: {fileID: 1433189516}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_ListOfPlayers.Array.data[2].PawnGo.Array.data[2]
+      value: 
+      objectReference: {fileID: 1347413353}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_ListOfPlayers.Array.data[3].m_scoreText
+      value: 
+      objectReference: {fileID: 789179155}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_ListOfPlayers.Array.data[3].PawnGo.Array.data[0]
+      value: 
+      objectReference: {fileID: 810367712}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_ListOfPlayers.Array.data[3].PawnGo.Array.data[1]
+      value: 
+      objectReference: {fileID: 1772888665}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_ListOfPlayers.Array.data[3].PawnGo.Array.data[2]
+      value: 
+      objectReference: {fileID: 722973158}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[0].placGO.Array.data[0]
+      value: 
+      objectReference: {fileID: 324508227}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[0].placGO.Array.data[1]
+      value: 
+      objectReference: {fileID: 976069700}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[0].placGO.Array.data[2]
+      value: 
+      objectReference: {fileID: 1524730924}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[0].cardGO.Array.data[0]
+      value: 
+      objectReference: {fileID: 1684510695}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[0].cardGO.Array.data[1]
+      value: 
+      objectReference: {fileID: 506396408}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[0].cardGO.Array.data[2]
+      value: 
+      objectReference: {fileID: 97640045}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[0].specialPlace
+      value: 
+      objectReference: {fileID: 684659471}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[1].placGO.Array.data[0]
+      value: 
+      objectReference: {fileID: 670875604}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[1].placGO.Array.data[1]
+      value: 
+      objectReference: {fileID: 199214062}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[1].placGO.Array.data[2]
+      value: 
+      objectReference: {fileID: 1581565212}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[1].cardGO.Array.data[0]
+      value: 
+      objectReference: {fileID: 336823933}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[1].cardGO.Array.data[1]
+      value: 
+      objectReference: {fileID: 243541757}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[1].cardGO.Array.data[2]
+      value: 
+      objectReference: {fileID: 738176654}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[1].specialPlace
+      value: 
+      objectReference: {fileID: 1129336393}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[2].placGO.Array.data[0]
+      value: 
+      objectReference: {fileID: 81112112}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[2].placGO.Array.data[1]
+      value: 
+      objectReference: {fileID: 1602658803}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[2].placGO.Array.data[2]
+      value: 
+      objectReference: {fileID: 123975159}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[2].cardGO.Array.data[0]
+      value: 
+      objectReference: {fileID: 1764946288}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[2].cardGO.Array.data[1]
+      value: 
+      objectReference: {fileID: 126534452}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[2].cardGO.Array.data[2]
+      value: 
+      objectReference: {fileID: 2091679727}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[2].specialPlace
+      value: 
+      objectReference: {fileID: 126143035}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[3].placGO.Array.data[0]
+      value: 
+      objectReference: {fileID: 1799606544}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[3].placGO.Array.data[1]
+      value: 
+      objectReference: {fileID: 362356437}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[3].placGO.Array.data[2]
+      value: 
+      objectReference: {fileID: 951240172}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[3].cardGO.Array.data[0]
+      value: 
+      objectReference: {fileID: 702803059}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[3].cardGO.Array.data[1]
+      value: 
+      objectReference: {fileID: 889746295}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[3].cardGO.Array.data[2]
+      value: 
+      objectReference: {fileID: 815648930}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[3].specialPlace
+      value: 
+      objectReference: {fileID: 607231019}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[4].placGO.Array.data[0]
+      value: 
+      objectReference: {fileID: 794092589}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[4].placGO.Array.data[1]
+      value: 
+      objectReference: {fileID: 462503666}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[4].placGO.Array.data[2]
+      value: 
+      objectReference: {fileID: 1275266476}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[4].cardGO.Array.data[0]
+      value: 
+      objectReference: {fileID: 1081002215}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[4].cardGO.Array.data[1]
+      value: 
+      objectReference: {fileID: 2069044282}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[4].cardGO.Array.data[2]
+      value: 
+      objectReference: {fileID: 1902847723}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[4].specialPlace
+      value: 
+      objectReference: {fileID: 589422647}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[5].placGO.Array.data[0]
+      value: 
+      objectReference: {fileID: 833785870}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[5].placGO.Array.data[1]
+      value: 
+      objectReference: {fileID: 682944314}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[5].placGO.Array.data[2]
+      value: 
+      objectReference: {fileID: 93641553}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[5].placGO.Array.data[3]
+      value: 
+      objectReference: {fileID: 1819339930}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[5].placGO.Array.data[4]
+      value: 
+      objectReference: {fileID: 135438990}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[5].placGO.Array.data[5]
+      value: 
+      objectReference: {fileID: 500961855}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[5].placGO.Array.data[6]
+      value: 
+      objectReference: {fileID: 1655988396}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[5].placGO.Array.data[7]
+      value: 
+      objectReference: {fileID: 1346053168}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[5].cardGO.Array.data[0]
+      value: 
+      objectReference: {fileID: 930362420}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RoomsList.Array.data[5].specialPlace
+      value: 
+      objectReference: {fileID: 1359317855}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: m_RollPanel
+      value: 
+      objectReference: {fileID: 184111785}
+    - target: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+      propertyPath: cammerdinerGo
+      value: 
+      objectReference: {fileID: 436218539}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
+  m_RootGameObject: {fileID: 1182310759}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &951240172
 GameObject:
   m_ObjectHideFlags: 0
@@ -8411,7 +8411,7 @@ CanvasRenderer:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 185648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-  m_PrefabInternal: {fileID: 801642228}
+  m_PrefabInternal: {fileID: 937908241}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1182310761}
@@ -8428,7 +8428,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11485648, guid: 0c961a53028f62d4bb0325c7af4f00ed,
     type: 2}
-  m_PrefabInternal: {fileID: 801642228}
+  m_PrefabInternal: {fileID: 937908241}
   m_GameObject: {fileID: 1182310759}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -8820,7 +8820,7 @@ MonoBehaviour:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 485648, guid: 0c961a53028f62d4bb0325c7af4f00ed, type: 2}
-  m_PrefabInternal: {fileID: 801642228}
+  m_PrefabInternal: {fileID: 937908241}
   m_GameObject: {fileID: 1182310759}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 119.457298, y: 225.713898, z: 1.875}

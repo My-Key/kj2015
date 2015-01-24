@@ -209,6 +209,7 @@ public class PlayerHolder
 
     public void RemoveCardID(Person person, int id)
     {
+        Boardmanager.instance.GiveBackCard(id);
         switch (person)
         {
             case Person.Child:

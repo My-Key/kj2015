@@ -50,6 +50,15 @@ public class Room
 
     public void RollCards()
     {
+        placeTaken = 0;
+
+        for (int i = 0; i < cardList.Count; i++)
+        {
+            Boardmanager.instance.GiveBackCard(cardList[i]);
+        }
+
+        cardList = new List<int>();
+
         for (int i = 0; i < availableCards; i++)
         {
             cardList.Add(Boardmanager.instance.RollItem());
