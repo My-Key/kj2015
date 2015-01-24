@@ -12,16 +12,17 @@ public class BackgroundParallax : MonoBehaviour
 	private Transform cam;						// Shorter reference to the main camera's transform.
 	private Vector3 previousCamPos;				// The postion of the camera in the previous frame.
 
+    public static BackgroundParallax instance;
 
-	void Awake ()
+    void Start ()
+    {
+        instance = this;
+    }
+
+
+	public void SetParallax (Transform cam)
 	{
-		// Setting up the reference shortcut.
-		cam = Camera.main.transform;
-	}
-
-
-	void Start ()
-	{
+        this.cam = cam;
 		// The 'previous frame' had the current frame's camera position.
 		previousCamPos = cam.position;
 	}
@@ -29,6 +30,8 @@ public class BackgroundParallax : MonoBehaviour
 
 	void Update ()
 	{
+        if (!cam)
+            return;
 		// The parallax is the opposite of the camera movement since the previous frame multiplied by the scale.
 		float parallax = (previousCamPos.x - cam.position.x) * parallaxScale;
 
@@ -48,4 +51,9 @@ public class BackgroundParallax : MonoBehaviour
 		// Set the previousCamPos to the camera's position at the end of this frame.
 		previousCamPos = cam.position;
 	}
+
+    void OnDestroy()
+    {
+        instance = null;
+    }
 }

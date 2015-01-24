@@ -656,7 +656,7 @@ MonoBehaviour:
   m_BulletSpawn: {fileID: 486636}
   m_KnifeSpawn: {fileID: 11486610}
   m_meeleDamage: 10
-  rocket: {fileID: 153702, guid: 11b549afabbb111439a8787c98bdca7e, type: 2}
+  rocket: {fileID: 100558, guid: 3c0b351918dbcbe48a938df35014ae79, type: 2}
   rocketSpeed: 20
   m_weaponDamage: 50
   groundCheck: {fileID: 0}

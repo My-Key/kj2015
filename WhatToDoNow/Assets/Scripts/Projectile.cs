@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour {
     public GameObject m_DamagePrefab;
     public AudioClip m_destoryClip;
 
-    public float m_TimeToDestory = 10f;
+    public float m_TimeToDestory = 3f;
 
     Owner owner = Owner.Enemy;
     int damage = 10;
