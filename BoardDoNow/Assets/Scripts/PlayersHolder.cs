@@ -6,17 +6,17 @@ using UnityEngine.UI;
 
 public class PlayersHolder : MonoBehaviour 
 {
+    List<PlayerHolder> ListOfPlayers;
+
+    public static PlayersHolder instance;
+
 
 	// Use this for initialization
 	void Start () 
     {
-	
+        instance = this;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
 [System.Serializable]
 class PlayerHolder
@@ -31,10 +31,22 @@ class PlayerHolder
     List<int> ladyCards = new List<int>();
     List<int> manCards = new List<int>();
 
+    public int m_childRoomPick = -1;
+    public int m_ladyRoomPick = -1;
+    public int m_manRoomPick = -1;
+
     public void ResetPlayer()
     {
         m_score = 0;
         m_greeenCardsSell = 0;
+        childCards = new List<int>();
+        ladyCards = new List<int>();
+        manCards = new List<int>();
+
+        m_childRoomPick = -1;
+        m_ladyRoomPick = -1;
+        m_manRoomPick = -1;
+
         UpdatePlayer();
     }
 
@@ -105,17 +117,61 @@ class PlayerHolder
 
     public void SellCard(int id, Person person)
     {
-        Debug.Log("GetCardValue");
-        int cardValue = 100;
+        int cardValue = GetCurrentCardValue(id);
 
         RemoveCardID(person, id);
         m_score += cardValue;
         UpdatePlayer();
     }
 
+    int GetCurrentCardValue(int id)
+    {
+        Debug.Log("GetCardValue");
+        return 100;
+    }
+
     void NeedToRemoveCard (List<int> cards, Person person)
     {
-        Debug.Log("Show menu Remove card");
+        if (m_isPlayer)
+            Debug.Log("Show menu Remove card");
+        else
+        {
+            int lowPice = 0;
+            int cardID = 0;
+            bool firstSell = true;
+            List<int> cardstmp = new List<int>();
+            switch (person)
+            {
+                case Person.Child:
+                    cards = childCards;
+                    break;
+                case Person.Lady:
+                    cards = ladyCards;
+                    break;
+                case Person.Man:
+                    cards = manCards;
+                    break;
+            }
+
+            for (int i  = 0; i  <cardstmp.Count; i ++)
+            {
+                if (firstSell)
+                {
+                    cardID = cardstmp[i];
+                    lowPice = GetCurrentCardValue(cardID);
+                    firstSell = false;
+                }
+                else if (GetCurrentCardValue(cardstmp[i]) < lowPice)
+                {
+                    cardID = cardstmp[i];
+                    lowPice = GetCurrentCardValue(cardID);
+                }
+            }
+
+            RemoveCardID(person, cardID);
+        }
+
+
     }
 
     public void RemoveCardPlace(Person person, int cardPlace)
@@ -132,6 +188,7 @@ class PlayerHolder
                 manCards.RemoveAt(cardPlace);
                 break;
         }
+        UpdatePlayer();
     }
 
     public void RemoveCardID(Person person, int id)
@@ -148,6 +205,7 @@ class PlayerHolder
                 manCards.Remove(id);
                 break;
         }
+        UpdatePlayer();
     }
 
 
