@@ -9,7 +9,7 @@ public class Boardmanager : MonoBehaviour {
     public int greenDice = 0;
     public int redDice = 0;
     public int currentTurn = 0;
-    public int maxTurns = 10;
+    public int maxTurns = 7;
 
     public GameObject diceGreenOBj;
     public GameObject diceRedOBj;
@@ -18,6 +18,7 @@ public class Boardmanager : MonoBehaviour {
 
     public List<Item> items;
     public List<PlayerHolder> m_ListOfPlayers;
+    public List<Room> m_RoomsList;
 
     public Panel m_RollPanel;
 
@@ -41,6 +42,7 @@ public class Boardmanager : MonoBehaviour {
 
         greenDiceim.SetItemofType(greenDice);
         redDiceim.SetItemofType(redDice);
+
         
     }
 
@@ -55,7 +57,7 @@ public class Boardmanager : MonoBehaviour {
         int item = -1;
         while(item == -1)
         {
-            int newItem = Random.Range(0, items.Count+1);
+            int newItem = Random.Range(0, items.Count);
             if (items[newItem].available)
             {
                 items[newItem].available = false;
@@ -79,6 +81,14 @@ public class Boardmanager : MonoBehaviour {
 		}
     }
 
+    public void ResetRooms()
+    {
+        for (int i = 0; i < m_RoomsList.Count; i++)
+        {
+            m_RoomsList[i].ResetRoom();
+        }
+    }
+
     public void RollSeen()
     {
         m_RollPanel.Hide(true);
@@ -94,8 +104,15 @@ public class Boardmanager : MonoBehaviour {
         }
         else
         {
-            m_TurnText.text = currentTurn + " / " + maxTurns; 
+            Debug.Log("Start Turn: " + currentTurn + "/" + maxTurns);
+            m_TurnText.text = currentTurn + "/" + maxTurns; 
             RollDices();
+
+            for (int i = 0; i < m_RoomsList.Count; i++)
+            {
+                m_RoomsList[i].RollCards();
+            }
+
             m_RollPanel.Show(false);
         }
     }
@@ -106,6 +123,7 @@ public class Boardmanager : MonoBehaviour {
         
         currentTurn = 0;
         ResetItems();
+        ResetRooms();
         for (int i = 0; i < m_ListOfPlayers.Count; i++)
         {
             m_ListOfPlayers[i].ResetPlayer();
@@ -114,6 +132,11 @@ public class Boardmanager : MonoBehaviour {
     }
 
 
+
+    public void PickRoom(int room)
+    {
+
+    }
     
 
 }

@@ -20,6 +20,10 @@ public class GameManager : MonoBehaviour
     GameState gamestate = GameState.Start;
     public static GameManager instance;
 
+
+    bool soundplaying = false;
+    public GameObject sounOn;
+    public GameObject soundOff;
     
 	// Use this for initialization
 	void Start () 
@@ -69,6 +73,7 @@ public class GameManager : MonoBehaviour
     {
         m_StartGamePanel.Hide(false);
         StartCoroutine(InitializeGame());
+        SoundButtonButton();
     }
 
 
@@ -90,6 +95,32 @@ public class GameManager : MonoBehaviour
     {
 
     }
+
+    public void SoundButtonButton()
+    {
+        soundplaying = !soundplaying;
+        if (soundplaying)
+        {
+            sounOn.SetActive(true);
+            soundOff.SetActive(false);
+
+            if (audio.clip != null)
+            {
+                audio.Play();
+                audio.loop = true;
+            }
+        }
+        else
+        {
+            sounOn.SetActive(false);
+            soundOff.SetActive(true);
+            if (audio.clip != null)
+            {
+                audio.Stop();
+            }
+        }
+    }
+
 
 
 

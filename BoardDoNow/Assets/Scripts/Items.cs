@@ -18,6 +18,6 @@ public enum ItemType
     Antiques = 2,
     Jewelry = 3,
     Book = 4,
-    Furniture = 5
-    //Reversal = 6
+    Furniture = 5,
+    QuestionMark = 6
 }

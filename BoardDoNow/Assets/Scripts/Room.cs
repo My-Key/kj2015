@@ -3,60 +3,91 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-namespace Assets.Scripts
+
+[System.Serializable]
+public class Room
 {
+    public bool isHall = false;
+    public int availablePlaces = 3;
+    public int availableCards = 3;
 
-    [System.Serializable]
-    public class Room
+    public int placeTaken;
+    public List<int> cardList;
+
+    public List<GameObject> placGO;
+    public List<GameObject> cardGO;
+
+    bool roomSetUped = false;
+    public void ResetRoom()
     {
-        public bool isHall = false;
-        public int availablePlaces = 3;
-        public int availableCards = 3;
-
-        public int placeTaken;
-        public List<int> cardList;
-
-        public List<GameObject> placGO;
-        public List<GameObject> cardGO;
-
-        public void ResetRoom()
+        if (!roomSetUped && !isHall)
         {
-            placeTaken = 0;
-            for (int i = 0; i < cardList.Count; i++)
+            if (availableCards < 3)
             {
-                cardList[i] = -1;
+                for (int i = availableCards; i < 3; i++)
+                {
+                    cardGO[i].SetActive(false);
+                }
             }
-            UpdateRoom();
+            if (availablePlaces < 3)
+            {
+                for (int i = availablePlaces; i < 3; i++)
+                {
+                    placGO[i].SetActive(false);
+                }
+            }
+            roomSetUped = true;
         }
 
-        public void RollCards()
+        placeTaken = 0;
+        for (int i = 0; i < cardList.Count; i++)
         {
-            for (int i = 0; i < cardList.Count; i++)
-            {
-                Boardmanager.instance.RollItem();
-            }
-            UpdateRoom();
+            cardList[i] = -1;
         }
+        UpdateRoom();
+    }
 
-        public bool TakePlace()
+    public void RollCards()
+    {
+        for (int i = 0; i < availableCards; i++)
         {
-            if (placeTaken < availablePlaces)
-            {
-                placeTaken++;
-                return true;
-            }
-            else
-                return false;
+            cardList.Add(Boardmanager.instance.RollItem());
         }
+        UpdateRoom();
+    }
 
-        public void UpdateRoom()
+    public bool TakePlace()
+    {
+        if (placeTaken < availablePlaces)
         {
-            for (int i = 0; i < cardGO.Count; i++)
+            placeTaken++;
+            return true;
+        }
+        else
+            return false;
+    }
+
+    public void UpdateRoom()
+    {
+        if (!isHall)
+        {
+            for (int i = 0; i < availableCards; i++)
             {
                 ItemManager item = cardGO[i].GetComponentInChildren<ItemManager>();
-                if (cardList[i])
+                if (cardList.Count > i)
+                    item.SetItem(cardList[i]);
+                else
+                {
+                    item.SetItem(-1);
+                }
             }
         }
-
+        else
+        {
+            ItemManager item = cardGO[0].GetComponentInChildren<ItemManager>();
+            item.SetItemofType((int)ItemType.QuestionMark);
+        }
     }
+
 }
+

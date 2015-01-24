@@ -21,8 +21,11 @@ public class ItemManager : MonoBehaviour {
         {
             items[i].SetActive(false);
         }
-        Item item = Boardmanager.instance.GetItemData(itemID);
-        items[((int)item.itemType) - 1].SetActive(true);
+        if (itemID >= 0)
+        {
+            Item item = Boardmanager.instance.GetItemData(itemID);
+            items[((int)item.itemType) - 1].SetActive(true);
+        }
     }
 
     public void SetItemofType(int itemType)
