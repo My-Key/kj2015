@@ -20,6 +20,8 @@ public class PlayerHolder
     public int m_ladyRoomPick = -1;
     public int m_manRoomPick = -1;
 
+    public List<GameObject> PawnGo;
+
     public void ResetPlayer()
     {
         m_score = 0;

@@ -16,6 +16,7 @@ public class Room
 
     public List<GameObject> placGO;
     public List<GameObject> cardGO;
+    public GameObject specialPlace;
 
     bool roomSetUped = false;
     public void ResetRoom()
@@ -56,15 +57,15 @@ public class Room
         UpdateRoom();
     }
 
-    public bool TakePlace()
+    public int TakePlace()
     {
         if (placeTaken < availablePlaces)
         {
             placeTaken++;
-            return true;
+            return placeTaken -1;
         }
         else
-            return false;
+            return -1;
     }
 
     public void UpdateRoom()
@@ -87,6 +88,13 @@ public class Room
             ItemManager item = cardGO[0].GetComponentInChildren<ItemManager>();
             item.SetItemofType((int)ItemType.QuestionMark);
         }
+    }
+
+    public int TakeCard()
+    {
+        int cardToReturn = cardList[0];
+        cardList.RemoveAt(0);
+        return cardToReturn;
     }
 
 }

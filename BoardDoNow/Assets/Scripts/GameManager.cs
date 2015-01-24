@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     public List<GameObject> objectsToDisableOnStart;
     
 
-    GameState gamestate = GameState.Start;
     public static GameManager instance;
 
 
@@ -48,7 +47,6 @@ public class GameManager : MonoBehaviour
 
     void ShowStartGame()
     {
-        gamestate = GameState.Start;
         m_StartGamePanel.Show(true);
         m_Manor.SetActive(true);
     }
@@ -56,7 +54,7 @@ public class GameManager : MonoBehaviour
 
     void ResetGame()
     {
-        gamestate = GameState.Start;
+
     }
 
 
@@ -84,8 +82,8 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         m_Manor.SetActive(false);
         m_Board.gameObject.SetActive(true);
-        //GameManager.instance.Fade(0f, 2f);
         yield return new WaitForSeconds(1f);
+        GameManager.instance.Fade(0.8f, 1f);
         Boardmanager.instance.StartGame();
     }
 
@@ -128,9 +126,18 @@ public class GameManager : MonoBehaviour
 
     public void Fade(float value, float time)
     {
+        m_FadeBlack.gameObject.SetActive(true);
         m_FadeBlack.DOFade(value, time);
+        if (value == 0)
+            StartCoroutine(TurnOffFade(time));
     }
 
+
+    IEnumerator TurnOffFade(float time)
+    {
+        yield return new WaitForSeconds(time);
+        m_FadeBlack.gameObject.SetActive(false);
+    }
 
 
 
