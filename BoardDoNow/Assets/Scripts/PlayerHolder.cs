@@ -120,7 +120,9 @@ public class PlayerHolder
     void NeedToRemoveCard(List<int> cards, Person person)
     {
         if (m_isPlayer)
-            Debug.Log("Show menu Remove card");
+		{
+			Boardmanager.instance.m_DiscardPanel.Show (false, person, cards);
+		}
         else
         {
             int lowPice = 0;

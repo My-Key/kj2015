@@ -23,7 +23,8 @@ public class Boardmanager : MonoBehaviour {
     public List<PlayerHolder> m_ListOfPlayers;
     public List<Room> m_RoomsList;
 
-    public Panel m_RollPanel;
+	public Panel m_RollPanel;
+	public DiscardPanel m_DiscardPanel;
 
     // Use this for initialization
     void Start()

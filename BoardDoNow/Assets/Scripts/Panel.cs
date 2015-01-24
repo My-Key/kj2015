@@ -31,5 +31,4 @@ public class Panel : MonoBehaviour {
         if (fade)
             GameManager.instance.Fade(0f, 1f);
     }
-	
 }
