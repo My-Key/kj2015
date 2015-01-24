@@ -8,8 +8,8 @@ public class Panel : MonoBehaviour {
     public Transform m_Panel;
     public Vector3 m_StartPosition;
     public Vector3 m_EndPosition;
-    public float m_ShowTime = 2f;
-    public float m_HideTime = 2f;
+    public float m_ShowTime = 1f;
+    public float m_HideTime = 1f;
 
     public virtual void Show(bool fade)
     {

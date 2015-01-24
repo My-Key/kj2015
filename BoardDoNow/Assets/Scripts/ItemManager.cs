@@ -31,6 +31,9 @@ public class ItemManager : MonoBehaviour {
         {
             items[i].SetActive(false);
         }
+        if (itemType >= 0)
         items[itemType - 1].SetActive(true);
     }
+
+
 }
