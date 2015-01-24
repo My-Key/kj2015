@@ -52,203 +52,283 @@ MonoBehaviour:
   m_TurnText: {fileID: 0}
   items:
   - itemType: 1
-    price: 10
+    price: 3
     available: 1
   - itemType: 1
-    price: 20
+    price: 6
+    available: 1
+  - itemType: 1
+    price: 9
+    available: 1
+  - itemType: 1
+    price: 12
+    available: 1
+  - itemType: 1
+    price: 15
+    available: 1
+  - itemType: 1
+    price: 18
+    available: 1
+  - itemType: 1
+    price: 21
+    available: 1
+  - itemType: 1
+    price: 24
+    available: 1
+  - itemType: 1
+    price: 27
     available: 1
   - itemType: 1
     price: 30
     available: 1
-  - itemType: 1
-    price: 40
+  - itemType: 2
+    price: 2
     available: 1
-  - itemType: 1
-    price: 50
+  - itemType: 2
+    price: 4
     available: 1
-  - itemType: 1
-    price: 60
+  - itemType: 2
+    price: 6
     available: 1
-  - itemType: 1
-    price: 70
-    available: 1
-  - itemType: 1
-    price: 80
-    available: 1
-  - itemType: 1
-    price: 90
-    available: 1
-  - itemType: 1
-    price: 100
+  - itemType: 2
+    price: 8
     available: 1
   - itemType: 2
     price: 10
     available: 1
   - itemType: 2
+    price: 12
+    available: 1
+  - itemType: 2
+    price: 14
+    available: 1
+  - itemType: 2
+    price: 16
+    available: 1
+  - itemType: 2
+    price: 18
+    available: 1
+  - itemType: 2
     price: 20
     available: 1
-  - itemType: 2
-    price: 30
-    available: 1
-  - itemType: 2
-    price: 40
-    available: 1
-  - itemType: 2
-    price: 50
-    available: 1
-  - itemType: 2
-    price: 60
-    available: 1
-  - itemType: 2
-    price: 70
-    available: 1
-  - itemType: 2
-    price: 80
-    available: 1
-  - itemType: 2
-    price: 90
-    available: 1
-  - itemType: 2
-    price: 100
+  - itemType: 3
+    price: 5
     available: 1
   - itemType: 3
     price: 10
     available: 1
   - itemType: 3
+    price: 15
+    available: 1
+  - itemType: 3
     price: 20
+    available: 1
+  - itemType: 3
+    price: 25
     available: 1
   - itemType: 3
     price: 30
     available: 1
   - itemType: 3
+    price: 35
+    available: 1
+  - itemType: 3
     price: 40
+    available: 1
+  - itemType: 3
+    price: 45
     available: 1
   - itemType: 3
     price: 50
     available: 1
-  - itemType: 3
-    price: 60
+  - itemType: 4
+    price: 1
     available: 1
-  - itemType: 3
-    price: 70
+  - itemType: 4
+    price: 2
     available: 1
-  - itemType: 3
-    price: 80
+  - itemType: 4
+    price: 3
     available: 1
-  - itemType: 3
-    price: 90
+  - itemType: 4
+    price: 4
     available: 1
-  - itemType: 3
-    price: 100
+  - itemType: 4
+    price: 5
+    available: 1
+  - itemType: 4
+    price: 6
+    available: 1
+  - itemType: 4
+    price: 7
+    available: 1
+  - itemType: 4
+    price: 8
+    available: 1
+  - itemType: 4
+    price: 9
     available: 1
   - itemType: 4
     price: 10
     available: 1
-  - itemType: 4
-    price: 20
-    available: 1
-  - itemType: 4
-    price: 30
-    available: 1
-  - itemType: 4
-    price: 40
-    available: 1
-  - itemType: 4
-    price: 50
-    available: 1
-  - itemType: 4
-    price: 60
-    available: 1
-  - itemType: 4
-    price: 70
-    available: 1
-  - itemType: 4
-    price: 80
-    available: 1
-  - itemType: 4
-    price: 90
-    available: 1
-  - itemType: 4
-    price: 100
+  - itemType: 5
+    price: 4
     available: 1
   - itemType: 5
-    price: 10
+    price: 8
+    available: 1
+  - itemType: 5
+    price: 12
+    available: 1
+  - itemType: 5
+    price: 16
     available: 1
   - itemType: 5
     price: 20
     available: 1
   - itemType: 5
-    price: 30
+    price: 24
+    available: 1
+  - itemType: 5
+    price: 28
+    available: 1
+  - itemType: 5
+    price: 32
+    available: 1
+  - itemType: 5
+    price: 36
     available: 1
   - itemType: 5
     price: 40
     available: 1
-  - itemType: 5
-    price: 50
+  - itemType: 6
+    price: -8
     available: 1
-  - itemType: 5
-    price: 60
+  - itemType: 6
+    price: -7
     available: 1
-  - itemType: 5
-    price: 70
+  - itemType: 6
+    price: -6
     available: 1
-  - itemType: 5
-    price: 80
+  - itemType: 6
+    price: -5
     available: 1
-  - itemType: 5
-    price: 90
+  - itemType: 6
+    price: -4
     available: 1
-  - itemType: 5
-    price: 100
+  - itemType: 6
+    price: -3
+    available: 1
+  - itemType: 6
+    price: -2
+    available: 1
+  - itemType: 6
+    price: -1
+    available: 1
+  - itemType: 6
+    price: 1
+    available: 1
+  - itemType: 6
+    price: 2
+    available: 1
+  - itemType: 6
+    price: 3
+    available: 1
+  - itemType: 6
+    price: 4
+    available: 1
+  - itemType: 6
+    price: 5
+    available: 1
+  - itemType: 6
+    price: 6
+    available: 1
+  - itemType: 6
+    price: 7
+    available: 1
+  - itemType: 6
+    price: 8
     available: 1
   m_ListOfPlayers:
   - m_isPlayer: 1
     m_score: 0
     m_greeenCardsSell: 0
     m_scoreText: {fileID: 0}
+    childCards: 
+    ladyCards: 
+    manCards: 
     m_childRoomPick: 0
     m_ladyRoomPick: 0
     m_manRoomPick: 0
-    PawnGo: []
+    PawnGo:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    PawnStartPos: []
+    childCardGO:
+    - {fileID: 0}
+    ladyCardGO:
+    - {fileID: 0}
+    - {fileID: 0}
+    manCardGO:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   - m_isPlayer: 0
     m_score: 0
     m_greeenCardsSell: 0
     m_scoreText: {fileID: 0}
+    childCards: 
+    ladyCards: 
+    manCards: 
     m_childRoomPick: 0
     m_ladyRoomPick: 0
     m_manRoomPick: 0
-    PawnGo: []
+    PawnGo:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    PawnStartPos: []
+    childCardGO: []
+    ladyCardGO: []
+    manCardGO: []
   - m_isPlayer: 0
     m_score: 0
     m_greeenCardsSell: 0
     m_scoreText: {fileID: 0}
+    childCards: 
+    ladyCards: 
+    manCards: 
     m_childRoomPick: 0
     m_ladyRoomPick: 0
     m_manRoomPick: 0
-    PawnGo: []
+    PawnGo:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    PawnStartPos: []
+    childCardGO: []
+    ladyCardGO: []
+    manCardGO: []
   - m_isPlayer: 0
     m_score: 0
     m_greeenCardsSell: 0
     m_scoreText: {fileID: 0}
+    childCards: 
+    ladyCards: 
+    manCards: 
     m_childRoomPick: 0
     m_ladyRoomPick: 0
     m_manRoomPick: 0
-    PawnGo: []
+    PawnGo:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    PawnStartPos: []
+    childCardGO: []
+    ladyCardGO: []
+    manCardGO: []
   m_RoomsList:
-  - isHall: 0
-    availablePlaces: 1
-    availableCards: 1
-    placeTaken: 0
-    cardList: 
-    placGO:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    cardGO:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    specialPlace: {fileID: 0}
   - isHall: 0
     availablePlaces: 2
     availableCards: 2
@@ -278,6 +358,20 @@ MonoBehaviour:
     - {fileID: 0}
     specialPlace: {fileID: 0}
   - isHall: 0
+    availablePlaces: 2
+    availableCards: 1
+    placeTaken: 0
+    cardList: 
+    placGO:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    cardGO:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    specialPlace: {fileID: 0}
+  - isHall: 0
     availablePlaces: 3
     availableCards: 3
     placeTaken: 0
@@ -293,7 +387,7 @@ MonoBehaviour:
     specialPlace: {fileID: 0}
   - isHall: 0
     availablePlaces: 3
-    availableCards: 3
+    availableCards: 2
     placeTaken: 0
     cardList: 
     placGO:
@@ -323,6 +417,9 @@ MonoBehaviour:
     - {fileID: 0}
     specialPlace: {fileID: 0}
   m_RollPanel: {fileID: 0}
+  cammerdinerGo: {fileID: 0}
+  cammedrinerStart: {x: 0, y: 0, z: 0}
+  cammerinderRoom: 5
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
