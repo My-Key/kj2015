@@ -14,6 +14,7 @@ public class DiscardPanel : Panel {
 	
 	public void Show(bool fade, Person person, List<int> listOfItems)
 	{
+		Boardmanager.waitForEndOfDiscard = true;
 		choosedItem = -1;
 		ok.interactable = false;
 		this.person = person;
@@ -53,6 +54,7 @@ public class DiscardPanel : Panel {
 
 	public void OnOk()
 	{
+		Boardmanager.waitForEndOfDiscard = false;
         if (choosedItem >= 0)
             cardImages[choosedItem].GetComponent<Image>().color = Color.white;
 

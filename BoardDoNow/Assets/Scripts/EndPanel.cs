@@ -16,4 +16,10 @@ public class EndPanel : Panel {
 		earnedText.text = earned.ToString () + "M $";
 		base.Show(fade);
 	}
+
+	public void Hide()
+	{
+		base.Hide (false);
+		Boardmanager.instance.StartGame ();
+	}
 }

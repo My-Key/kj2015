@@ -32,6 +32,7 @@ public class Boardmanager : MonoBehaviour {
 
     public EndPanel m_EndPanel;
 
+	public static bool waitForEndOfDiscard = false;
 
     // Use this for initialization
     void Start()
@@ -272,6 +273,9 @@ public class Boardmanager : MonoBehaviour {
         {
             for (int i = 0; i < m_ListOfPlayers.Count; i++)
             {
+				while (waitForEndOfDiscard)
+					yield return new WaitForSeconds(0.5f);
+
                 int playerIndex = i + playerStart;
                 if (playerIndex >= m_ListOfPlayers.Count)
                     playerIndex -= m_ListOfPlayers.Count;
