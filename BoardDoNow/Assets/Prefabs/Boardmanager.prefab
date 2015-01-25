@@ -447,7 +447,7 @@ MonoBehaviour:
   walkSound:
   - {fileID: 8300000, guid: dbfcdeefb3917414b8ad4ccf090615da, type: 3}
   walkButlerSound:
-  - {fileID: 8300000, guid: e12c13b8c1054bf4aac615a281bab968, type: 3}
+  - {fileID: 8300000, guid: dbfcdeefb3917414b8ad4ccf090615da, type: 3}
   itemCollectSound:
   - {fileID: 8300000, guid: 9933113bb6f9816458c5f30e64e58322, type: 3}
 --- !u!1001 &100100000

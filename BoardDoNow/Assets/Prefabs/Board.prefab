@@ -4797,7 +4797,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 1a5b2e373b9bdb6429238df2a02b3d47, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bd4ce8d8e30d7db448a6a951ff6cdfdb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4820,7 +4820,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5cc710e3d4bf0a54ca2a9e24e4aa33cc, type: 3}
-    m_FontSize: 98
+    m_FontSize: 81
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -4830,7 +4830,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: CASH
+  m_Text: Money
 --- !u!114 &11430760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4870,7 +4870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 6e85398e2d1e7484c9e961cabfaf4768, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bd4ce8d8e30d7db448a6a951ff6cdfdb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5776,7 +5776,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5cc710e3d4bf0a54ca2a9e24e4aa33cc, type: 3}
-    m_FontSize: 98
+    m_FontSize: 81
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -5786,7 +5786,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: CASH
+  m_Text: Money
 --- !u!114 &11430852
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6807,7 +6807,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5cc710e3d4bf0a54ca2a9e24e4aa33cc, type: 3}
-    m_FontSize: 98
+    m_FontSize: 81
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -6817,7 +6817,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: CASH
+  m_Text: Money
 --- !u!114 &11430954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6834,7 +6834,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 2048, y: 1536}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -10079,9 +10079,9 @@ RectTransform:
   - {fileID: 22412120}
   m_Father: {fileID: 22430990}
   m_RootOrder: 3
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1548, y: 546}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -411, y: 546}
   m_SizeDelta: {x: 686, y: 170}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22412124
@@ -10104,9 +10104,9 @@ RectTransform:
   - {fileID: 22412126}
   m_Father: {fileID: 22430990}
   m_RootOrder: 2
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1548, y: 546}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -411, y: 546}
   m_SizeDelta: {x: 686, y: 170}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22412126
@@ -11689,9 +11689,9 @@ RectTransform:
   - {fileID: 22443222}
   m_Father: {fileID: 22430990}
   m_RootOrder: 4
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1548, y: 546}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -411, y: 546}
   m_SizeDelta: {x: 686, y: 170}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22430968
