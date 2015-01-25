@@ -19,7 +19,7 @@ public class RollPanel : Panel {
         ItemManager greenDice = diceGreen.GetComponentInChildren<ItemManager>();
         ItemManager redDice = diceRed.GetComponentInChildren<ItemManager>();
 
-        greenDice.SetItemofType(Boardmanager.instance.greenDice);
-        redDice.SetItemofType(Boardmanager.instance.redDice);
+        greenDice.ShufleAnimation(Boardmanager.instance.greenDice);
+        redDice.ShufleAnimation(Boardmanager.instance.redDice);
     }
 }

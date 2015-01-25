@@ -39,6 +39,18 @@ public class Boardmanager : MonoBehaviour {
     public int cammerdinerMoves = 1;
 
 
+
+    public List<AudioClip> starTurSound;
+    public List<AudioClip> clickSound;
+    public List<AudioClip> cashSound;
+    public List<AudioClip> catchSound;
+    public List<AudioClip> shufleSound;
+    public List<AudioClip> winSound;
+    public List<AudioClip> loseSound;
+    public List<AudioClip> walkSound;
+    public List<AudioClip> itemCollectSound;
+
+    
     // Use this for initialization
     void Start()
     {
@@ -58,8 +70,8 @@ public class Boardmanager : MonoBehaviour {
         ItemManager greenDiceim = diceGreenOBj.GetComponentInChildren<ItemManager>();
         ItemManager redDiceim = diceRedOBj.GetComponentInChildren<ItemManager>();
 
-        greenDiceim.SetItemofType(greenDice);
-        redDiceim.SetItemofType(redDice);
+        greenDiceim.ShufleAnimation(greenDice);
+        redDiceim.ShufleAnimation(redDice);
 
         
     }
@@ -153,13 +165,19 @@ public class Boardmanager : MonoBehaviour {
 
     public void StartTurn()
     {
-
+        SpawnSound(starTurSound);
         cammerdinerMoves = 1;
         currentTurn++;
 
         if (currentTurn > maxTurns)
         {
-            m_EndPanel.Show(false, DidPlayerWin(), m_ListOfPlayers[0].m_score);
+            bool didPlayerWin =DidPlayerWin();
+            if (didPlayerWin)
+                SpawnSound(winSound);
+            else
+                SpawnSound(loseSound);
+
+            m_EndPanel.Show(false, didPlayerWin, m_ListOfPlayers[0].m_score);
 
         }
         else
@@ -213,16 +231,19 @@ public class Boardmanager : MonoBehaviour {
 
     public void PickRoomChild(int room)
     {
+        SpawnSound(clickSound);
         m_ListOfPlayers[0].m_childRoomPick = room;
         StartCoroutine(WaitAndShowRoomPanel(1, 0.5f));
     }
     public void PickRoomLady(int room)
     {
+        SpawnSound(clickSound);
         m_ListOfPlayers[0].m_ladyRoomPick = room;
         StartCoroutine(WaitAndShowRoomPanel(2, 0.5f));
     }
     public void PickRoomMan(int room)
     {
+        SpawnSound(clickSound);
         m_ListOfPlayers[0].m_manRoomPick = room;
         StartCoroutine(WaitAndShowRoomPanel(3, 0.5f));
     }
@@ -409,7 +430,9 @@ public class Boardmanager : MonoBehaviour {
                 {
                     pawn.transform.DOMove(m_RoomsList[room].placGO[place].transform.position, 2f);
                     pawn.transform.DOScale(new Vector3(0.5f,0.5f,0.5f), 2f);
+                    SpawnSound(walkSound);
                     yield return new WaitForSeconds(2f);
+                    SpawnSound(itemCollectSound);
                     m_ListOfPlayers[playerIndex].AddCard((Person)(type), m_RoomsList[room].TakeCard());
                     yield return new WaitForSeconds(1f);
                 }
@@ -418,7 +441,7 @@ public class Boardmanager : MonoBehaviour {
                     place = m_RoomsList[5].TakePlace();
                     pawn.transform.DOScale(new Vector3(0.5f, 0.5f, 0.5f), 2f);
                     pawn.transform.DOMove(m_RoomsList[room].specialPlace.transform.position, 2f);
-
+                    SpawnSound(walkSound);
                     yield return new WaitForSeconds(2f);
                     switch (type)
                     {
@@ -434,7 +457,9 @@ public class Boardmanager : MonoBehaviour {
                     }
                     
                     pawn.transform.DOMove(m_RoomsList[5].placGO[place].transform.position, 2f);
+                    SpawnSound(walkSound);
                     yield return new WaitForSeconds(2f);
+                    SpawnSound(itemCollectSound);
                     int item = RollCrapyItem();
                     if (cammerdinerMoves == 1 && item >63)
                         cammerdinerMoves++;
@@ -481,6 +506,7 @@ public class Boardmanager : MonoBehaviour {
         cammerdinerGo.transform.DOMove(m_RoomsList[room].specialPlace.transform.position, 2f);
         cammerdinerGo.transform.DOScale(new Vector3(0.7f, 0.7f, 0.7f), 2f);
         cammerinderRoom = room;
+        SpawnSound(walkSound);
         yield return new WaitForSeconds(3f);
 
         while (waitForEndOfDiscard)
@@ -498,6 +524,7 @@ public class Boardmanager : MonoBehaviour {
 
     void CheckPlayersItemsCammerdiner()
     {
+        int catched = 0;
         for (int i = 0; i < m_ListOfPlayers.Count; i++)
         {
             if (m_ListOfPlayers[i].m_childRoomPick == cammerinderRoom)
@@ -511,6 +538,7 @@ public class Boardmanager : MonoBehaviour {
                         m_ListOfPlayers[i].ForceSellCard(m_ListOfPlayers[i].childCards[a], Person.Child);
                         m_ListOfPlayers[i].PawnGo[0].transform.DOShakeRotation(2, 20);
                         cammerdinerGo.transform.DOShakeRotation(2, 20);
+                        catched++;
                     }
                 }
             }
@@ -525,6 +553,7 @@ public class Boardmanager : MonoBehaviour {
                         m_ListOfPlayers[i].ForceSellCard(m_ListOfPlayers[i].ladyCards[a], Person.Lady);
                         m_ListOfPlayers[i].PawnGo[1].transform.DOShakeRotation(2, 20);
                         cammerdinerGo.transform.DOShakeRotation(2, 20);
+                        catched++;
                     }
                 }
             }
@@ -539,10 +568,13 @@ public class Boardmanager : MonoBehaviour {
                         m_ListOfPlayers[i].ForceSellCard(m_ListOfPlayers[i].manCards[a], Person.Man);
                         m_ListOfPlayers[i].PawnGo[2].transform.DOShakeRotation(2, 20);
                         cammerdinerGo.transform.DOShakeRotation(2, 20);
+                        catched++;
                     }
                 }
             }
         }
+        if (catched > 0)
+            SpawnSound(catchSound);
         StartCoroutine(WaitAndSell());
     }
 
@@ -598,7 +630,7 @@ public class Boardmanager : MonoBehaviour {
                 }
             }
         }
-        
+        SpawnSound(cashSound);
         StartCoroutine(WaitAndStartTurn());
     }
 
@@ -622,6 +654,13 @@ public class Boardmanager : MonoBehaviour {
         {0,0,2,4,4,5},
             };
 
+    }
+
+
+    void SpawnSound(List<AudioClip> clips)
+    {
+        if (clips != null && clips.Count > 0)
+            AudioSource.PlayClipAtPoint(clips[Random.Range(0, clips.Count)], Camera.main.transform.position);
     }
 }
 

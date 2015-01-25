@@ -54,5 +54,23 @@ public class ItemManager : MonoBehaviour {
 		priceTag.SetActive (false);
     }
 
+    public void ShufleAnimation(int itemType)
+    {
+        SetItemofType((int)ItemType.QuestionMark);
+
+        StartCoroutine(ShufleAnimationENUM(itemType));
+    }
+
+    IEnumerator ShufleAnimationENUM(int itemType)
+    {
+        for (int i = 0; i < 20; i++)
+        {
+            int modulo = i % 5;
+            SetItemofType(modulo);
+            yield return new WaitForSeconds(0.1f);
+        }
+        SetItemofType(itemType);
+    }
+
 
 }
