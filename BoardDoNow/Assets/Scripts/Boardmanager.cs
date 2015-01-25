@@ -38,6 +38,7 @@ public class Boardmanager : MonoBehaviour {
 
     public int cammerdinerMoves = 1;
 
+	public List<GameObject> layers;
 
 
     public List<AudioClip> starTurSound;
@@ -430,6 +431,7 @@ public class Boardmanager : MonoBehaviour {
                 {
                     pawn.transform.DOMove(m_RoomsList[room].placGO[place].transform.position, 2f);
                     pawn.transform.DOScale(new Vector3(0.5f,0.5f,0.5f), 2f);
+					SetParentByPosition(m_RoomsList[room].placGO[place].transform.position, pawn);
                     SpawnSound(walkSound);
                     yield return new WaitForSeconds(2f);
                     SpawnSound(itemCollectSound);
@@ -443,6 +445,10 @@ public class Boardmanager : MonoBehaviour {
                     pawn.transform.DOMove(m_RoomsList[room].specialPlace.transform.position, 2f);
                     SpawnSound(walkSound);
                     yield return new WaitForSeconds(2f);
+					pawn.transform.DOMove(m_RoomsList[room].specialPlace.transform.position, 2f);
+					SetParentByPosition(m_RoomsList[room].specialPlace.transform.position, pawn);
+					
+					yield return new WaitForSeconds(2f);
                     switch (type)
                     {
 	                    case (int)Person.Child:
@@ -456,8 +462,9 @@ public class Boardmanager : MonoBehaviour {
                             break;
                     }
                     
-                    pawn.transform.DOMove(m_RoomsList[5].placGO[place].transform.position, 2f);
-                    SpawnSound(walkSound);
+SpawnSound(walkSound);
+					SetParentByPosition(m_RoomsList[5].placGO[place].transform.position, pawn);
+                    
                     yield return new WaitForSeconds(2f);
                     SpawnSound(itemCollectSound);
                     int item = RollCrapyItem();
@@ -470,6 +477,22 @@ public class Boardmanager : MonoBehaviour {
         ProcessCammerdiner();
         
     }
+
+	public void SetParentByPosition(Vector3 position, GameObject obj)
+	{
+		GameObject newParent = null;
+
+		foreach (GameObject parent in layers)
+		{
+			if (newParent == null || (Mathf.Abs(parent.transform.position.y - position.y) < Mathf.Abs(newParent.transform.position.y - position.y)))
+			{
+				newParent = parent;
+			}
+		}
+
+		if (newParent != null)
+			obj.transform.parent = newParent.transform;
+	}
 
     void ProcessCammerdiner()
     {
@@ -503,8 +526,9 @@ public class Boardmanager : MonoBehaviour {
 
     IEnumerator MoveCammerdiner(int room)
     {
-        cammerdinerGo.transform.DOMove(m_RoomsList[room].specialPlace.transform.position, 2f);
-        cammerdinerGo.transform.DOScale(new Vector3(0.7f, 0.7f, 0.7f), 2f);
+		cammerdinerGo.transform.DOMove(m_RoomsList[room].specialPlace.transform.position, 2f);
+		SetParentByPosition(m_RoomsList[room].specialPlace.transform.position, cammerdinerGo);
+		cammerdinerGo.transform.DOScale(new Vector3(0.7f, 0.7f, 0.7f), 2f);
         cammerinderRoom = room;
         SpawnSound(walkSound);
         yield return new WaitForSeconds(3f);
