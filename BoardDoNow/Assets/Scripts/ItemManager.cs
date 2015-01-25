@@ -67,7 +67,7 @@ public class ItemManager : MonoBehaviour {
         {
             int modulo = i % 5;
             SetItemofType(modulo);
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
         }
         SetItemofType(itemType);
     }

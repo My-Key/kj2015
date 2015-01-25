@@ -680,7 +680,7 @@ public class Boardmanager : MonoBehaviour {
     }
 
 
-    void SpawnSound(List<AudioClip> clips)
+    public void SpawnSound(List<AudioClip> clips)
     {
         if (clips != null && clips.Count > 0)
             AudioSource.PlayClipAtPoint(clips[Random.Range(0, clips.Count)], Camera.main.transform.position);

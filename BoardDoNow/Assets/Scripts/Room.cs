@@ -105,10 +105,19 @@ public class Room
 
     public int TakeCard()
     {
-        if (cardList.Count > 0)
+        List<int> leftCardList = new List<int>();
+
+        for (int i = 0; i < cardList.Count; i++)
         {
-            int cardToReturn = cardList[0];
-            cardList.RemoveAt(0);
+            if (cardList[i]>-1)
+            {
+                leftCardList.Add(cardList[i]);
+            }
+        }
+        if (leftCardList.Count > 0)
+        {
+            int cardToReturn = leftCardList[0];
+            cardList[cardList.IndexOf(leftCardList[0])] = -1;
             UpdateRoom();
             return cardToReturn;
         }
