@@ -38,11 +38,11 @@ public class Boardmanager : MonoBehaviour {
 
     public void RollDices()
     {
-        greenDice = Random.Range(1, 6);
+        greenDice = Random.Range(0, 5);
         redDice = greenDice;
         while (redDice == greenDice)
         {
-            redDice = Random.Range(1, 6);
+            redDice = Random.Range(0, 5);
         }
 
         ItemManager greenDiceim = diceGreenOBj.GetComponentInChildren<ItemManager>();
@@ -81,7 +81,7 @@ public class Boardmanager : MonoBehaviour {
         int item = -1;
         while(item == -1)
         {
-            int newItem = Random.Range(51, items.Count-50);
+            int newItem = Random.Range(51, 66);
             if (items[newItem].available)
             {
                 items[newItem].available = false;
@@ -89,13 +89,11 @@ public class Boardmanager : MonoBehaviour {
             }
 
         }
-        Debug.Log("RollCrapyItem " + item);
         return item;
     }
 
     public void GiveBackCard(int id)
     {
-        Debug.Log("GiveBackCard " + id + " available " + items[id].available);
         items[id].available = true;
     }
     
@@ -248,7 +246,7 @@ public class Boardmanager : MonoBehaviour {
                 GameObject pawn = m_ListOfPlayers[playerIndex].PawnGo[type];
 
                 int room = 0;
-                switch (type + 1)
+                switch (type)
                 {
 	                case (int)Person.Child:
                         room = m_ListOfPlayers[playerIndex].m_childRoomPick;
@@ -267,7 +265,7 @@ public class Boardmanager : MonoBehaviour {
                     pawn.transform.DOMove(m_RoomsList[room].placGO[place].transform.position, 2f);
                     pawn.transform.DOScale(new Vector3(0.5f,0.5f,0.5f), 2f);
                     yield return new WaitForSeconds(2f);
-                    m_ListOfPlayers[playerIndex].AddCard((Person)(type+1), m_RoomsList[room].TakeCard());
+                    m_ListOfPlayers[playerIndex].AddCard((Person)(type), m_RoomsList[room].TakeCard());
                     yield return new WaitForSeconds(1f);
                 }
                 else
@@ -275,10 +273,24 @@ public class Boardmanager : MonoBehaviour {
                     place = m_RoomsList[5].TakePlace();
                     pawn.transform.DOScale(new Vector3(0.5f, 0.5f, 0.5f), 2f);
                     pawn.transform.DOMove(m_RoomsList[room].specialPlace.transform.position, 2f);
+
                     yield return new WaitForSeconds(2f);
+                    switch (type)
+                    {
+	                    case (int)Person.Child:
+                            m_ListOfPlayers[playerIndex].m_childRoomPick = 5;
+                            break;
+                        case (int)Person.Lady:
+                            m_ListOfPlayers[playerIndex].m_ladyRoomPick = 5;
+                            break;
+                        case (int)Person.Man:
+                            m_ListOfPlayers[playerIndex].m_manRoomPick = 5;
+                            break;
+                    }
+                    
                     pawn.transform.DOMove(m_RoomsList[5].placGO[place].transform.position, 2f);
                     yield return new WaitForSeconds(1f);
-                    m_ListOfPlayers[playerIndex].AddCard((Person)(type + 1), RollCrapyItem());
+                    m_ListOfPlayers[playerIndex].AddCard((Person)(type), RollCrapyItem());
                 }
             }
         }
@@ -317,7 +329,6 @@ public class Boardmanager : MonoBehaviour {
 
     IEnumerator MoveCammerdiner(int room)
     {
-        Debug.Log("MoveCammerdiner");
         cammerdinerGo.transform.DOMove(m_RoomsList[room].specialPlace.transform.position, 2f);
         cammerdinerGo.transform.DOScale(new Vector3(0.7f, 0.7f, 0.7f), 2f);
         cammerinderRoom = room;
@@ -328,27 +339,57 @@ public class Boardmanager : MonoBehaviour {
 
     void CheckPlayersItemsCammerdiner()
     {
-        for (int j = 0; j < 3; j++)
+        for (int i = 0; i < m_ListOfPlayers.Count; i++)
         {
-            for (int i = 0; i < m_ListOfPlayers.Count; i++)
+            if (m_ListOfPlayers[i].m_childRoomPick == cammerinderRoom)
             {
                 for (int a = 0; a < m_ListOfPlayers[i].childCards.Count; a++)
                 {
                     Item item = GetItemData(m_ListOfPlayers[i].childCards[a]);
                     if (redDice == (int)item.itemType)
                     {
+                        Debug.Log("cammerdinerCatch " + i + " Child " + redDice + "|" + m_ListOfPlayers[i].childCards[a] + "|" + (int)item.itemType + " camroom " + cammerinderRoom + "|" + m_ListOfPlayers[i].m_childRoomPick);
                         m_ListOfPlayers[i].ForceSellCard(m_ListOfPlayers[i].childCards[a], Person.Child);
+                        m_ListOfPlayers[i].PawnGo[0].transform.DOShakeRotation(2, 20);
+                        cammerdinerGo.transform.DOShakeRotation(2, 20);
+                    }
+                }
+            }
+            if (m_ListOfPlayers[i].m_ladyRoomPick == cammerinderRoom)
+            {
+                for (int a = 0; a < m_ListOfPlayers[i].ladyCards.Count; a++)
+                {
+                    Item item = GetItemData(m_ListOfPlayers[i].ladyCards[a]);
+                    if (redDice == (int)item.itemType)
+                    {
+                        Debug.Log("cammerdinerCatch " + i + " Lady " + redDice + "|" + m_ListOfPlayers[i].ladyCards[a] + "|" + (int)item.itemType + " camroom " + cammerinderRoom + "|" + m_ListOfPlayers[i].m_ladyRoomPick);
+                        m_ListOfPlayers[i].ForceSellCard(m_ListOfPlayers[i].ladyCards[a], Person.Lady);
+                        m_ListOfPlayers[i].PawnGo[1].transform.DOShakeRotation(2, 20);
+                        cammerdinerGo.transform.DOShakeRotation(2, 20);
+                    }
+                }
+            }
+            if (m_ListOfPlayers[i].m_manRoomPick == cammerinderRoom)
+            {
+                for (int a = 0; a < m_ListOfPlayers[i].manCards.Count; a++)
+                {
+                    Item item = GetItemData(m_ListOfPlayers[i].manCards[a]);
+                    if (redDice == (int)item.itemType)
+                    {
+                        Debug.Log("cammerdinerCatch " + i + " Man " + redDice + "|" + m_ListOfPlayers[i].manCards[a] + "|" + (int)item.itemType + " camroom " + cammerinderRoom + "|" + m_ListOfPlayers[i].m_manRoomPick);
+                        m_ListOfPlayers[i].ForceSellCard(m_ListOfPlayers[i].manCards[a], Person.Man);
+                        m_ListOfPlayers[i].PawnGo[2].transform.DOShakeRotation(2, 20);
+                        cammerdinerGo.transform.DOShakeRotation(2, 20);
                     }
                 }
             }
         }
-        Debug.Log("CheckPlayersItemsCammerdiner ended");
         StartCoroutine(WaitAndSell());
     }
 
     IEnumerator WaitAndSell()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
         for (int j = 0; j < 3; j++)
         {
@@ -360,42 +401,44 @@ public class Boardmanager : MonoBehaviour {
 
             }
         }
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
         CheckPlayersItems();
     }
 
     void CheckPlayersItems()
     {
-        for (int j = 0; j < 3; j++)
+        
+        for (int i = 0; i < m_ListOfPlayers.Count; i++)
         {
-            for (int i = 0; i < m_ListOfPlayers.Count; i++)
+            for (int a = 0; a < m_ListOfPlayers[i].childCards.Count; a++)
             {
-                for (int a = 0; a < m_ListOfPlayers[i].childCards.Count; a++)
+                Item item = GetItemData(m_ListOfPlayers[i].childCards[a]);
+                if (greenDice == (int)item.itemType || item.itemType == ItemType.QuestionMark)
                 {
-                    Item item = GetItemData(m_ListOfPlayers[i].childCards[a]);
-                    if (greenDice == (int)item.itemType || item.itemType == ItemType.QuestionMark)
-                    {
-                        m_ListOfPlayers[i].SellCard(m_ListOfPlayers[i].childCards[a], Person.Child);
-                    }
+                    m_ListOfPlayers[i].SellCard(m_ListOfPlayers[i].childCards[a], Person.Child);
+                    m_ListOfPlayers[i].m_greeenCardsSell++;
                 }
-                for (int a = 0; a < m_ListOfPlayers[i].ladyCards.Count; a++)
+            }
+            for (int a = 0; a < m_ListOfPlayers[i].ladyCards.Count; a++)
+            {
+                Item item = GetItemData(m_ListOfPlayers[i].ladyCards[a]);
+                if (greenDice == (int)item.itemType || item.itemType == ItemType.QuestionMark)
                 {
-                    Item item = GetItemData(m_ListOfPlayers[i].ladyCards[a]);
-                    if (greenDice == (int)item.itemType || item.itemType == ItemType.QuestionMark)
-                    {
-                        m_ListOfPlayers[i].SellCard(m_ListOfPlayers[i].ladyCards[a], Person.Lady);
-                    }
+                    m_ListOfPlayers[i].SellCard(m_ListOfPlayers[i].ladyCards[a], Person.Lady);
+                    m_ListOfPlayers[i].m_greeenCardsSell++;
                 }
-                for (int a = 0; a < m_ListOfPlayers[i].manCards.Count; a++)
+            }
+            for (int a = 0; a < m_ListOfPlayers[i].manCards.Count; a++)
+            {
+                Item item = GetItemData(m_ListOfPlayers[i].manCards[a]);
+                if (greenDice == (int)item.itemType || item.itemType == ItemType.QuestionMark)
                 {
-                    Item item = GetItemData(m_ListOfPlayers[i].manCards[a]);
-                    if (greenDice == (int)item.itemType || item.itemType == ItemType.QuestionMark)
-                    {
-                        m_ListOfPlayers[i].SellCard(m_ListOfPlayers[i].manCards[a], Person.Man);
-                    }
+                    m_ListOfPlayers[i].SellCard(m_ListOfPlayers[i].manCards[a], Person.Man);
+                    m_ListOfPlayers[i].m_greeenCardsSell++;
                 }
             }
         }
+        
         StartCoroutine(WaitAndStartTurn());
     }
 

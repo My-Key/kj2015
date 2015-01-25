@@ -51,202 +51,202 @@ MonoBehaviour:
   - {fileID: 0}
   m_TurnText: {fileID: 0}
   items:
-  - itemType: 1
+  - itemType: 0
     price: 3
     available: 1
-  - itemType: 1
+  - itemType: 0
     price: 6
     available: 1
-  - itemType: 1
+  - itemType: 0
     price: 9
     available: 1
-  - itemType: 1
+  - itemType: 0
     price: 12
     available: 1
-  - itemType: 1
+  - itemType: 0
     price: 15
     available: 1
-  - itemType: 1
+  - itemType: 0
     price: 18
     available: 1
-  - itemType: 1
+  - itemType: 0
     price: 21
     available: 1
-  - itemType: 1
+  - itemType: 0
     price: 24
     available: 1
-  - itemType: 1
+  - itemType: 0
     price: 27
     available: 1
-  - itemType: 1
+  - itemType: 0
     price: 30
     available: 1
-  - itemType: 2
+  - itemType: 1
     price: 2
     available: 1
-  - itemType: 2
+  - itemType: 1
     price: 4
     available: 1
-  - itemType: 2
+  - itemType: 1
     price: 6
     available: 1
-  - itemType: 2
+  - itemType: 1
     price: 8
     available: 1
-  - itemType: 2
+  - itemType: 1
     price: 10
     available: 1
-  - itemType: 2
+  - itemType: 1
     price: 12
     available: 1
-  - itemType: 2
+  - itemType: 1
     price: 14
     available: 1
-  - itemType: 2
+  - itemType: 1
     price: 16
     available: 1
-  - itemType: 2
+  - itemType: 1
     price: 18
     available: 1
+  - itemType: 1
+    price: 20
+    available: 1
+  - itemType: 2
+    price: 5
+    available: 1
+  - itemType: 2
+    price: 10
+    available: 1
+  - itemType: 2
+    price: 15
+    available: 1
   - itemType: 2
     price: 20
     available: 1
-  - itemType: 3
-    price: 5
-    available: 1
-  - itemType: 3
-    price: 10
-    available: 1
-  - itemType: 3
-    price: 15
-    available: 1
-  - itemType: 3
-    price: 20
-    available: 1
-  - itemType: 3
+  - itemType: 2
     price: 25
     available: 1
-  - itemType: 3
+  - itemType: 2
     price: 30
     available: 1
-  - itemType: 3
+  - itemType: 2
     price: 35
     available: 1
-  - itemType: 3
+  - itemType: 2
     price: 40
     available: 1
-  - itemType: 3
+  - itemType: 2
     price: 45
     available: 1
-  - itemType: 3
+  - itemType: 2
     price: 50
     available: 1
-  - itemType: 4
+  - itemType: 3
     price: 1
     available: 1
-  - itemType: 4
+  - itemType: 3
     price: 2
     available: 1
-  - itemType: 4
+  - itemType: 3
     price: 3
     available: 1
-  - itemType: 4
+  - itemType: 3
     price: 4
     available: 1
-  - itemType: 4
+  - itemType: 3
     price: 5
     available: 1
-  - itemType: 4
+  - itemType: 3
     price: 6
     available: 1
-  - itemType: 4
+  - itemType: 3
     price: 7
     available: 1
-  - itemType: 4
+  - itemType: 3
     price: 8
     available: 1
-  - itemType: 4
+  - itemType: 3
     price: 9
     available: 1
-  - itemType: 4
+  - itemType: 3
     price: 10
     available: 1
-  - itemType: 5
+  - itemType: 4
     price: 4
     available: 1
-  - itemType: 5
+  - itemType: 4
     price: 8
     available: 1
-  - itemType: 5
+  - itemType: 4
     price: 12
     available: 1
-  - itemType: 5
+  - itemType: 4
     price: 16
     available: 1
-  - itemType: 5
+  - itemType: 4
     price: 20
     available: 1
-  - itemType: 5
+  - itemType: 4
     price: 24
     available: 1
-  - itemType: 5
+  - itemType: 4
     price: 28
     available: 1
-  - itemType: 5
+  - itemType: 4
     price: 32
     available: 1
-  - itemType: 5
+  - itemType: 4
     price: 36
     available: 1
-  - itemType: 5
+  - itemType: 4
     price: 40
     available: 1
-  - itemType: 6
+  - itemType: 5
     price: -8
     available: 1
-  - itemType: 6
+  - itemType: 5
     price: -7
     available: 1
-  - itemType: 6
+  - itemType: 5
     price: -6
     available: 1
-  - itemType: 6
+  - itemType: 5
     price: -5
     available: 1
-  - itemType: 6
+  - itemType: 5
     price: -4
     available: 1
-  - itemType: 6
+  - itemType: 5
     price: -3
     available: 1
-  - itemType: 6
+  - itemType: 5
     price: -2
     available: 1
-  - itemType: 6
+  - itemType: 5
     price: -1
     available: 1
-  - itemType: 6
+  - itemType: 5
     price: 1
     available: 1
-  - itemType: 6
+  - itemType: 5
     price: 2
     available: 1
-  - itemType: 6
+  - itemType: 5
     price: 3
     available: 1
-  - itemType: 6
+  - itemType: 5
     price: 4
     available: 1
-  - itemType: 6
+  - itemType: 5
     price: 5
     available: 1
-  - itemType: 6
+  - itemType: 5
     price: 6
     available: 1
-  - itemType: 6
+  - itemType: 5
     price: 7
     available: 1
-  - itemType: 6
+  - itemType: 5
     price: 8
     available: 1
   m_ListOfPlayers:
@@ -417,6 +417,7 @@ MonoBehaviour:
     - {fileID: 0}
     specialPlace: {fileID: 0}
   m_RollPanel: {fileID: 0}
+  m_DiscardPanel: {fileID: 0}
   cammerdinerGo: {fileID: 0}
   cammedrinerStart: {x: 0, y: 0, z: 0}
   cammerinderRoom: 5

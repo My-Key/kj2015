@@ -10,6 +10,8 @@ public class ItemManager : MonoBehaviour {
 	public GameObject priceTag;
 	public Text price;
 
+    public int id = 0;
+
 	void Awake () 
     {
         for (int i = 0; i < items.Count; i++)
@@ -21,6 +23,7 @@ public class ItemManager : MonoBehaviour {
 
     public GameObject SetItem(int itemID)
     {
+        id = itemID;
         for (int i = 0; i < items.Count; i++)
         {
             items[i].SetActive(false);
@@ -29,11 +32,11 @@ public class ItemManager : MonoBehaviour {
         if (itemID >= 0)
         {
             Item item = Boardmanager.instance.GetItemData(itemID);
-            items[((int)item.itemType) - 1].SetActive(true);
+            items[((int)item.itemType)].SetActive(true);
             priceTag.SetActive(true);
 			price.text = item.price.ToString() + "M $";
             
-			return items[((int)item.itemType) - 1];
+			return items[((int)item.itemType)];
         }
 		return null;
     }
@@ -46,7 +49,7 @@ public class ItemManager : MonoBehaviour {
             priceTag.SetActive(false);
         }
         if (itemType >= 0)
-        items[itemType - 1].SetActive(true);
+        items[itemType].SetActive(true);
 
 		priceTag.SetActive (false);
     }

@@ -15,7 +15,7 @@ public class RollPanel : Panel {
     IEnumerator ShowDelay(bool fade)
     {
         base.Show(fade);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         ItemManager greenDice = diceGreen.GetComponentInChildren<ItemManager>();
         ItemManager redDice = diceRed.GetComponentInChildren<ItemManager>();
 

@@ -14,10 +14,10 @@ public class Item
 
 public enum ItemType
 {
-    Paintings = 1,
-    Antiques = 2,
-    Jewelry = 3,
-    Book = 4,
-    Furniture = 5,
-    QuestionMark = 6
+    Paintings = 0,
+    Antiques = 1,
+    Jewelry = 2,
+    Book = 3,
+    Furniture = 4,
+    QuestionMark = 5
 }

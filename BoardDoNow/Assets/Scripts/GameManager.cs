@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
         }
         DOTween.Init(true, true, LogBehaviour.ErrorsOnly);
         instance = this;
+        SoundButtonButton();
         ShowStartGame();
 
         
@@ -71,7 +72,7 @@ public class GameManager : MonoBehaviour
     {
         m_StartGamePanel.Hide(false);
         StartCoroutine(InitializeGame());
-        SoundButtonButton();
+        
     }
 
 

@@ -294,12 +294,13 @@ MonoBehaviour:
   items:
   - {fileID: 109250}
   - {fileID: 109248}
-  - {fileID: 109246}
   - {fileID: 109244}
+  - {fileID: 109246}
   - {fileID: 180252}
   - {fileID: 109242}
   priceTag: {fileID: 114954}
   price: {fileID: 11414952}
+  id: 0
 --- !u!114 &11414952
 MonoBehaviour:
   m_ObjectHideFlags: 1

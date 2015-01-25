@@ -276,7 +276,7 @@ public class PlayerHolder
 }
 public enum Person
 {
-    Child = 1,
-    Lady = 2,
-    Man = 3
+    Child = 0,
+    Lady = 1,
+    Man = 2
 }

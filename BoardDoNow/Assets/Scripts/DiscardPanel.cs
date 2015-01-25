@@ -53,7 +53,8 @@ public class DiscardPanel : Panel {
 
 	public void OnOk()
 	{
-		Boardmanager.instance.m_ListOfPlayers [0].RemoveCardID (person, choosedItem);
+
+        Boardmanager.instance.m_ListOfPlayers[0].RemoveCardID(person, items[choosedItem]);
 		Hide (true);
 	}
 }
