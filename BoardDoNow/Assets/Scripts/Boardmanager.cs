@@ -49,6 +49,7 @@ public class Boardmanager : MonoBehaviour {
     public List<AudioClip> winSound;
     public List<AudioClip> loseSound;
     public List<AudioClip> walkSound;
+    public List<AudioClip> walkButlerSound;
     public List<AudioClip> itemCollectSound;
 
     
@@ -525,7 +526,7 @@ public class Boardmanager : MonoBehaviour {
 		SetParentByPosition(m_RoomsList[room].specialPlace.transform.position, cammerdinerGo);
 		cammerdinerGo.transform.DOScale(new Vector3(0.7f, 0.7f, 0.7f), 2f);
         cammerinderRoom = room;
-        SpawnSound(walkSound);
+        SpawnSound(walkButlerSound);
         yield return new WaitForSeconds(3f);
 
         while (waitForEndOfDiscard)

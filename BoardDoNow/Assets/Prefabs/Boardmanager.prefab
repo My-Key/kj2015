@@ -430,15 +430,26 @@ MonoBehaviour:
   m_EndPanel: {fileID: 0}
   cammerdinerMoves: 1
   layers: []
-  starTurSound: []
-  clickSound: []
-  cashSound: []
-  catchSound: []
-  shufleSound: []
-  winSound: []
-  loseSound: []
-  walkSound: []
-  itemCollectSound: []
+  starTurSound:
+  - {fileID: 8300000, guid: fbc5f8ac2314dea47b1337dc254df44f, type: 3}
+  clickSound:
+  - {fileID: 8300000, guid: 89f1b1b3ac96ee547be68ef600fd3894, type: 3}
+  cashSound:
+  - {fileID: 8300000, guid: 4e23e134da8e8f746b22555875a8ae86, type: 3}
+  catchSound:
+  - {fileID: 8300000, guid: 033ce501e184fb743a55aee82133f11e, type: 3}
+  shufleSound:
+  - {fileID: 8300000, guid: bea9d6aeb23f27d49991d58df8e913e6, type: 3}
+  winSound:
+  - {fileID: 8300000, guid: da8bd857287e87b4f9b709b91b2aabc5, type: 3}
+  loseSound:
+  - {fileID: 8300000, guid: 882fec0c3f453634d96aa6469cfb8916, type: 3}
+  walkSound:
+  - {fileID: 8300000, guid: dbfcdeefb3917414b8ad4ccf090615da, type: 3}
+  walkButlerSound:
+  - {fileID: 8300000, guid: e12c13b8c1054bf4aac615a281bab968, type: 3}
+  itemCollectSound:
+  - {fileID: 8300000, guid: 9933113bb6f9816458c5f30e64e58322, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
