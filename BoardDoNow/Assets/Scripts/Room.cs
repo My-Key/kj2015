@@ -50,6 +50,15 @@ public class Room
 
     public void RollCards()
     {
+        placeTaken = 0;
+
+        for (int i = 0; i < cardList.Count; i++)
+        {
+            Boardmanager.instance.GiveBackCard(cardList[i]);
+        }
+
+        cardList = new List<int>();
+
         for (int i = 0; i < availableCards; i++)
         {
             cardList.Add(Boardmanager.instance.RollItem());
@@ -62,7 +71,10 @@ public class Room
         if (placeTaken < availablePlaces)
         {
             placeTaken++;
-            return placeTaken -1;
+            if (isHall && placeTaken > 8)
+                return placeTaken -= 8;
+            else
+                return placeTaken -1;
         }
         else
             return -1;
@@ -92,9 +104,15 @@ public class Room
 
     public int TakeCard()
     {
-        int cardToReturn = cardList[0];
-        cardList.RemoveAt(0);
-        return cardToReturn;
+        if (cardList.Count > 0)
+        {
+            int cardToReturn = cardList[0];
+            cardList.RemoveAt(0);
+            UpdateRoom();
+            return cardToReturn;
+        }
+        else
+            return -1;
     }
 
 }
