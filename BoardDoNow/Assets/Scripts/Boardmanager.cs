@@ -446,10 +446,12 @@ public class Boardmanager : MonoBehaviour {
                     pawn.transform.DOMove(m_RoomsList[room].specialPlace.transform.position, 2f);
                     SpawnSound(walkSound);
                     yield return new WaitForSeconds(2f);
-					pawn.transform.DOMove(m_RoomsList[room].specialPlace.transform.position, 2f);
-					SetParentByPosition(m_RoomsList[room].specialPlace.transform.position, pawn);
+
+					pawn.transform.DOMove(m_RoomsList[5].placGO[place].transform.position, 2f);
+					SetParentByPosition(m_RoomsList[5].placGO[place].transform.position, pawn);
                     SpawnSound(walkSound);
 					yield return new WaitForSeconds(2f);
+
                     switch (type)
                     {
 	                    case (int)Person.Child:
