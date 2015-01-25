@@ -422,6 +422,7 @@ MonoBehaviour:
   cammedrinerStart: {x: 0, y: 0, z: 0}
   cammerinderRoom: 5
   m_EndPanel: {fileID: 0}
+  cammerdinerMoves: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
