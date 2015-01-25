@@ -429,7 +429,14 @@ MonoBehaviour:
   cammerinderRoom: 5
   m_EndPanel: {fileID: 0}
   cammerdinerMoves: 1
-  layers: []
+  layers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   starTurSound:
   - {fileID: 8300000, guid: fbc5f8ac2314dea47b1337dc254df44f, type: 3}
   clickSound:
@@ -439,15 +446,15 @@ MonoBehaviour:
   catchSound:
   - {fileID: 8300000, guid: 033ce501e184fb743a55aee82133f11e, type: 3}
   shufleSound:
-  - {fileID: 8300000, guid: bea9d6aeb23f27d49991d58df8e913e6, type: 3}
+  - {fileID: 8300000, guid: d03d819924e1deb4983ecb9a276bef43, type: 3}
   winSound:
   - {fileID: 8300000, guid: da8bd857287e87b4f9b709b91b2aabc5, type: 3}
   loseSound:
   - {fileID: 8300000, guid: 882fec0c3f453634d96aa6469cfb8916, type: 3}
   walkSound:
-  - {fileID: 8300000, guid: dbfcdeefb3917414b8ad4ccf090615da, type: 3}
+  - {fileID: 8300000, guid: c2f9b99ae653dc44ba517bffb587dd67, type: 3}
   walkButlerSound:
-  - {fileID: 8300000, guid: dbfcdeefb3917414b8ad4ccf090615da, type: 3}
+  - {fileID: 8300000, guid: c2f9b99ae653dc44ba517bffb587dd67, type: 3}
   itemCollectSound:
   - {fileID: 8300000, guid: 9933113bb6f9816458c5f30e64e58322, type: 3}
 --- !u!1001 &100100000
