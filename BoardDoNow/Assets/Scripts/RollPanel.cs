@@ -24,7 +24,9 @@ public class RollPanel : Panel {
 
         greenDice.ShufleAnimation(Boardmanager.instance.greenDice);
         redDice.ShufleAnimation(Boardmanager.instance.redDice);
-        yield return new WaitForSeconds(1f);
-        okButton.interactable = true;
+        yield return new WaitForSeconds(0.75f);
+		Boardmanager.instance.SpawnSound (Boardmanager.instance.shufleSound);
+		yield return new WaitForSeconds(0.25f);
+		okButton.interactable = true;
     }
 }
