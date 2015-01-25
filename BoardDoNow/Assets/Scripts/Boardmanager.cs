@@ -33,10 +33,14 @@ public class Boardmanager : MonoBehaviour {
     public EndPanel m_EndPanel;
 
 
+    public int[,] moveTable;
+
+
     // Use this for initialization
     void Start()
     {
         instance = this;
+        SetUpMoveBoard();
     }
 
     public void RollDices()
@@ -231,9 +235,11 @@ public class Boardmanager : MonoBehaviour {
 
     public void ProcesAIMoves()
     {
-        Debug.Log("ProcesAIMoves");
 
-        for (int i = 1; i < m_ListOfPlayers.Count; i++)
+        ProcessAI1();
+        ProcessAI2();
+
+        for (int i = 3; i < m_ListOfPlayers.Count; i++)
         {
             m_ListOfPlayers[i].m_childRoomPick = Random.Range(0, 5);
             m_ListOfPlayers[i].m_ladyRoomPick = Random.Range(0, 5);
@@ -242,6 +248,93 @@ public class Boardmanager : MonoBehaviour {
 
         ProcessMovePionkow();
     }
+
+
+
+    void ProcessAI1()
+    {
+        List<int> roomValue = new List<int>();
+        for (int i = 0; i < m_RoomsList.Count; i++)
+        {
+            int tmpRoomValue = 0;
+            for (int j = 0; j < m_RoomsList[i].cardList.Count; j++)
+            {
+                tmpRoomValue += GetItemData(m_RoomsList[i].cardList[j]).price;
+            }
+            roomValue.Add(tmpRoomValue);
+        }
+        List<int> roomSort = roomValue;
+        roomSort.Sort();
+        int indexOfRoom = roomValue.IndexOf(roomSort[roomSort.Count - 1]);
+        m_ListOfPlayers[1].m_childRoomPick = indexOfRoom;
+        if (m_RoomsList[indexOfRoom].availablePlaces > 1)
+        {
+            m_ListOfPlayers[1].m_ladyRoomPick = indexOfRoom;
+            m_ListOfPlayers[1].m_manRoomPick = roomValue.IndexOf(roomSort[roomSort.Count - 2]);
+        }
+        else
+        {
+            m_ListOfPlayers[1].m_ladyRoomPick = roomValue.IndexOf(roomSort[roomSort.Count - 2]);
+            m_ListOfPlayers[1].m_manRoomPick = roomValue.IndexOf(roomSort[roomSort.Count - 3]);
+        }
+
+    }
+
+
+
+    void ProcessAI2()
+    {
+        List<int> itemValue = new List<int>();
+        for (int i = 0; i < m_RoomsList.Count; i++)
+        {
+            int tmpRoomValue = 0;
+            for (int j = 0; j < m_RoomsList[i].cardList.Count; j++)
+            {
+                itemValue.Add( GetItemData(m_RoomsList[i].cardList[j]).price);
+            }
+        }
+        itemValue.Sort();
+
+        for (int i = 0; i < m_RoomsList.Count; i++)
+        {
+            int tmpRoomValue = 0;
+            for (int j = 0; j < m_RoomsList[i].cardList.Count; j++)
+            {
+                if(GetItemData(m_RoomsList[i].cardList[j]).price == itemValue[itemValue.Count-1])
+                {
+                    m_ListOfPlayers[2].m_childRoomPick = i;
+                }
+            }
+        }
+
+        for (int i = 0; i < m_RoomsList.Count; i++)
+        {
+            int tmpRoomValue = 0;
+            for (int j = 0; j < m_RoomsList[i].cardList.Count; j++)
+            {
+                if (GetItemData(m_RoomsList[i].cardList[j]).price == itemValue[itemValue.Count - 2])
+                {
+                    m_ListOfPlayers[2].m_ladyRoomPick = i;
+                }
+            }
+        }
+
+        for (int i = 0; i < m_RoomsList.Count; i++)
+        {
+            int tmpRoomValue = 0;
+            for (int j = 0; j < m_RoomsList[i].cardList.Count; j++)
+            {
+                if (GetItemData(m_RoomsList[i].cardList[j]).price == itemValue[itemValue.Count - 3])
+                {
+                    m_ListOfPlayers[2].m_manRoomPick = i;
+                }
+            }
+        }
+
+    }
+
+
+
 
     public void ProcessMovePionkow()
     {
@@ -334,7 +427,6 @@ public class Boardmanager : MonoBehaviour {
 
     void ProcessCammerdiner()
     {
-        Debug.Log("ProcessCammerdiner");
         if (currentTurn == 1)
         {
             StartCoroutine(MoveCammerdiner(5));
@@ -352,6 +444,8 @@ public class Boardmanager : MonoBehaviour {
                     room = i;
                 }
             }
+            room = moveTable[cammerinderRoom, room];
+
             StartCoroutine(MoveCammerdiner(room));
         }
         
@@ -480,6 +574,19 @@ public class Boardmanager : MonoBehaviour {
     {
         yield return new WaitForSeconds(3f);
         StartTurn();
+    }
+
+    void SetUpMoveBoard()
+    {
+        moveTable = new int[6, 6] {
+        {0,1,5,5,5,5},
+        {0,1,0,0,0,0},
+        {5,5,2,5,5,5},
+        {4,4,4,3,4,4},
+        {5,5,5,3,4,5},
+        {0,0,2,4,4,5},
+            };
+
     }
 }
 
