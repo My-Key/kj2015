@@ -343,34 +343,7 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     specialPlace: {fileID: 0}
-  - isHall: 0
-    availablePlaces: 1
-    availableCards: 1
-    placeTaken: 0
-    cardList: 
-    placGO:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    cardGO:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    specialPlace: {fileID: 0}
-  - isHall: 0
-    availablePlaces: 2
-    availableCards: 1
-    placeTaken: 0
-    cardList: 
-    placGO:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    cardGO:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    specialPlace: {fileID: 0}
+    m_butlerPlace: {fileID: 0}
   - isHall: 0
     availablePlaces: 3
     availableCards: 3
@@ -385,6 +358,37 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     specialPlace: {fileID: 0}
+    m_butlerPlace: {fileID: 0}
+  - isHall: 0
+    availablePlaces: 2
+    availableCards: 1
+    placeTaken: 0
+    cardList: 
+    placGO:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    cardGO:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    specialPlace: {fileID: 0}
+    m_butlerPlace: {fileID: 0}
+  - isHall: 0
+    availablePlaces: 1
+    availableCards: 1
+    placeTaken: 0
+    cardList: 
+    placGO:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    cardGO:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    specialPlace: {fileID: 0}
+    m_butlerPlace: {fileID: 0}
   - isHall: 0
     availablePlaces: 3
     availableCards: 2
@@ -399,6 +403,7 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     specialPlace: {fileID: 0}
+    m_butlerPlace: {fileID: 0}
   - isHall: 1
     availablePlaces: 12
     availableCards: 12
@@ -416,6 +421,7 @@ MonoBehaviour:
     cardGO:
     - {fileID: 0}
     specialPlace: {fileID: 0}
+    m_butlerPlace: {fileID: 0}
   m_RollPanel: {fileID: 0}
   m_DiscardPanel: {fileID: 0}
   cammerdinerGo: {fileID: 0}
@@ -423,6 +429,16 @@ MonoBehaviour:
   cammerinderRoom: 5
   m_EndPanel: {fileID: 0}
   cammerdinerMoves: 1
+  layers: []
+  starTurSound: []
+  clickSound: []
+  cashSound: []
+  catchSound: []
+  shufleSound: []
+  winSound: []
+  loseSound: []
+  walkSound: []
+  itemCollectSound: []
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

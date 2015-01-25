@@ -539,6 +539,7 @@ MonoBehaviour:
   m_HideTime: 1
   diceGreen: {fileID: 133630}
   diceRed: {fileID: 136374}
+  okButton: {fileID: 11436362}
 --- !u!222 &22233628
 CanvasRenderer:
   m_ObjectHideFlags: 1

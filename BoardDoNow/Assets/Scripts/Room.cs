@@ -17,6 +17,7 @@ public class Room
     public List<GameObject> placGO;
     public List<GameObject> cardGO;
     public GameObject specialPlace;
+    public GameObject m_butlerPlace;
 
     bool roomSetUped = false;
     public void ResetRoom()

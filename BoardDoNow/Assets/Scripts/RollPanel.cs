@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class RollPanel : Panel {
 
     public GameObject diceGreen;
     public GameObject diceRed;
+    public Button okButton;
+
 
     public override void Show(bool fade)
     {
         StartCoroutine(ShowDelay(fade));
-        
+        okButton.interactable = false;
     }
 
     IEnumerator ShowDelay(bool fade)
@@ -21,5 +24,7 @@ public class RollPanel : Panel {
 
         greenDice.ShufleAnimation(Boardmanager.instance.greenDice);
         redDice.ShufleAnimation(Boardmanager.instance.redDice);
+        yield return new WaitForSeconds(2f);
+        okButton.interactable = true;
     }
 }

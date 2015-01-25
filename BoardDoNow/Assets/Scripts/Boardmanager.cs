@@ -447,7 +447,7 @@ public class Boardmanager : MonoBehaviour {
                     yield return new WaitForSeconds(2f);
 					pawn.transform.DOMove(m_RoomsList[room].specialPlace.transform.position, 2f);
 					SetParentByPosition(m_RoomsList[room].specialPlace.transform.position, pawn);
-					
+                    SpawnSound(walkSound);
 					yield return new WaitForSeconds(2f);
                     switch (type)
                     {
@@ -461,11 +461,6 @@ public class Boardmanager : MonoBehaviour {
                             m_ListOfPlayers[playerIndex].m_manRoomPick = 5;
                             break;
                     }
-                    
-SpawnSound(walkSound);
-					SetParentByPosition(m_RoomsList[5].placGO[place].transform.position, pawn);
-                    
-                    yield return new WaitForSeconds(2f);
                     SpawnSound(itemCollectSound);
                     int item = RollCrapyItem();
                     if (cammerdinerMoves == 1 && item >63)
@@ -617,6 +612,9 @@ SpawnSound(walkSound);
 
             }
         }
+        cammerdinerGo.transform.DOMove(m_RoomsList[cammerinderRoom].m_butlerPlace.transform.position, 2f);
+        SetParentByPosition(m_RoomsList[cammerinderRoom].m_butlerPlace.transform.position, cammerdinerGo);
+
         yield return new WaitForSeconds(2f);
         CheckPlayersItems();
     }
