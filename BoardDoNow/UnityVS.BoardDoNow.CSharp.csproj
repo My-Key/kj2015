@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Boardmanager.cs" />
     <Compile Include="Assets\Scripts\DiscardPanel.cs" />
+    <Compile Include="Assets\Scripts\EndPanel.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\ItemManager.cs" />
     <Compile Include="Assets\Scripts\Items.cs" />

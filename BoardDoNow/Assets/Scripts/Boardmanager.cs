@@ -30,6 +30,9 @@ public class Boardmanager : MonoBehaviour {
     public Vector3 cammedrinerStart;
     public int cammerinderRoom = 5;
 
+    public EndPanel m_EndPanel;
+
+
     // Use this for initialization
     void Start()
     {
@@ -94,7 +97,10 @@ public class Boardmanager : MonoBehaviour {
 
     public void GiveBackCard(int id)
     {
-        items[id].available = true;
+        if (id >= 0 && id < items.Count)
+        {
+            items[id].available = true;
+        }
     }
     
 
@@ -141,7 +147,8 @@ public class Boardmanager : MonoBehaviour {
 
         if (currentTurn > maxTurns)
         {
-            Debug.Log("ProcessEndGame");
+            m_EndPanel.Show(false, DidPlayerWin(), m_ListOfPlayers[0].m_score);
+
         }
         else
         {
@@ -157,6 +164,33 @@ public class Boardmanager : MonoBehaviour {
             m_RollPanel.Show(true);
         }
     }
+
+    public bool DidPlayerWin()
+    {
+        int playerScore = m_ListOfPlayers[0].m_score;
+        int maxEnemiesScore = 0;
+
+        for (int i = 1; i < m_ListOfPlayers.Count; i++)
+        {
+            maxEnemiesScore = Mathf.Max(maxEnemiesScore, m_ListOfPlayers[i].m_score);
+        }
+
+        if (playerScore == maxEnemiesScore)
+        {
+            playerScore = m_ListOfPlayers[0].m_greeenCardsSell;
+            maxEnemiesScore = 0;
+            for (int i = 1; i < m_ListOfPlayers.Count; i++)
+            {
+                maxEnemiesScore = Mathf.Max(maxEnemiesScore, m_ListOfPlayers[i].m_greeenCardsSell);
+            }
+
+            return playerScore >= maxEnemiesScore;
+        }
+
+        return playerScore > maxEnemiesScore;
+    }
+
+
 
 
     public void RollSeen()
@@ -289,7 +323,7 @@ public class Boardmanager : MonoBehaviour {
                     }
                     
                     pawn.transform.DOMove(m_RoomsList[5].placGO[place].transform.position, 2f);
-                    yield return new WaitForSeconds(1f);
+                    yield return new WaitForSeconds(2f);
                     m_ListOfPlayers[playerIndex].AddCard((Person)(type), RollCrapyItem());
                 }
             }

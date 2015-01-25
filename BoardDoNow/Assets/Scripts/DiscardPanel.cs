@@ -53,6 +53,8 @@ public class DiscardPanel : Panel {
 
 	public void OnOk()
 	{
+        if (choosedItem >= 0)
+            cardImages[choosedItem].GetComponent<Image>().color = Color.white;
 
         Boardmanager.instance.m_ListOfPlayers[0].RemoveCardID(person, items[choosedItem]);
 		Hide (true);
