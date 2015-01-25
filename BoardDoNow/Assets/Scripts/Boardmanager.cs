@@ -36,6 +36,8 @@ public class Boardmanager : MonoBehaviour {
 
     public int[,] moveTable;
 
+    public int cammerdinerMoves = 1;
+
 
     // Use this for initialization
     void Start()
@@ -111,7 +113,10 @@ public class Boardmanager : MonoBehaviour {
 
     public Item GetItemData(int id)
     {
-        return items[id];
+        if (id >= 0)
+            return items[id];
+        else
+            return null;
     }
 
     public void StartGame()
@@ -148,6 +153,8 @@ public class Boardmanager : MonoBehaviour {
 
     public void StartTurn()
     {
+
+        cammerdinerMoves = 1;
         currentTurn++;
 
         if (currentTurn > maxTurns)
@@ -157,7 +164,6 @@ public class Boardmanager : MonoBehaviour {
         }
         else
         {
-            Debug.Log("Start Turn: " + currentTurn + "/" + maxTurns);
             m_TurnText.text = currentTurn + "/" + maxTurns; 
             RollDices();
 
@@ -255,7 +261,7 @@ public class Boardmanager : MonoBehaviour {
     void ProcessAI1()
     {
         List<int> roomValue = new List<int>();
-        for (int i = 0; i < m_RoomsList.Count; i++)
+        for (int i = 0; i < m_RoomsList.Count - 1; i++)
         {
             int tmpRoomValue = 0;
             for (int j = 0; j < m_RoomsList[i].cardList.Count; j++)
@@ -266,6 +272,13 @@ public class Boardmanager : MonoBehaviour {
         }
         List<int> roomSort = roomValue;
         roomSort.Sort();
+
+
+        /*for (int i = 0; i < roomSort.Count; i++)
+        {
+            Debug.LogWarning("AI1 " + i + "|" + roomSort[i]);
+        }*/
+
         int indexOfRoom = roomValue.IndexOf(roomSort[roomSort.Count - 1]);
         m_ListOfPlayers[1].m_childRoomPick = indexOfRoom;
         if (m_RoomsList[indexOfRoom].availablePlaces > 1)
@@ -286,9 +299,8 @@ public class Boardmanager : MonoBehaviour {
     void ProcessAI2()
     {
         List<int> itemValue = new List<int>();
-        for (int i = 0; i < m_RoomsList.Count; i++)
+        for (int i = 0; i < m_RoomsList.Count - 1; i++)
         {
-            int tmpRoomValue = 0;
             for (int j = 0; j < m_RoomsList[i].cardList.Count; j++)
             {
                 itemValue.Add( GetItemData(m_RoomsList[i].cardList[j]).price);
@@ -296,21 +308,24 @@ public class Boardmanager : MonoBehaviour {
         }
         itemValue.Sort();
 
-        for (int i = 0; i < m_RoomsList.Count; i++)
+        /*for (int i = 0; i < itemValue.Count; i++)
         {
-            int tmpRoomValue = 0;
+            Debug.LogWarning("AI2 " + i + "|" + itemValue[i]);
+        }*/
+
+        for (int i = 0; i < m_RoomsList.Count - 1; i++)
+        {
             for (int j = 0; j < m_RoomsList[i].cardList.Count; j++)
             {
-                if(GetItemData(m_RoomsList[i].cardList[j]).price == itemValue[itemValue.Count-1])
+                if (GetItemData(m_RoomsList[i].cardList[j]).price == itemValue[itemValue.Count - 1])
                 {
                     m_ListOfPlayers[2].m_childRoomPick = i;
                 }
             }
         }
 
-        for (int i = 0; i < m_RoomsList.Count; i++)
+        for (int i = 0; i < m_RoomsList.Count - 1; i++)
         {
-            int tmpRoomValue = 0;
             for (int j = 0; j < m_RoomsList[i].cardList.Count; j++)
             {
                 if (GetItemData(m_RoomsList[i].cardList[j]).price == itemValue[itemValue.Count - 2])
@@ -322,7 +337,6 @@ public class Boardmanager : MonoBehaviour {
 
         for (int i = 0; i < m_RoomsList.Count; i++)
         {
-            int tmpRoomValue = 0;
             for (int j = 0; j < m_RoomsList[i].cardList.Count; j++)
             {
                 if (GetItemData(m_RoomsList[i].cardList[j]).price == itemValue[itemValue.Count - 3])
@@ -421,7 +435,10 @@ public class Boardmanager : MonoBehaviour {
                     
                     pawn.transform.DOMove(m_RoomsList[5].placGO[place].transform.position, 2f);
                     yield return new WaitForSeconds(2f);
-                    m_ListOfPlayers[playerIndex].AddCard((Person)(type), RollCrapyItem());
+                    int item = RollCrapyItem();
+                    if (cammerdinerMoves == 1 && item >63)
+                        cammerdinerMoves++;
+                    m_ListOfPlayers[playerIndex].AddCard((Person)(type), item);
                 }
             }
         }
@@ -465,7 +482,17 @@ public class Boardmanager : MonoBehaviour {
         cammerdinerGo.transform.DOScale(new Vector3(0.7f, 0.7f, 0.7f), 2f);
         cammerinderRoom = room;
         yield return new WaitForSeconds(3f);
-        CheckPlayersItemsCammerdiner();
+
+        while (waitForEndOfDiscard)
+            yield return new WaitForSeconds(0.5f);
+
+        cammerdinerMoves--;
+        if (cammerdinerMoves == 0)
+            CheckPlayersItemsCammerdiner();
+        else
+        {
+            ProcessCammerdiner();
+        }
     }
 
 
@@ -522,7 +549,8 @@ public class Boardmanager : MonoBehaviour {
     IEnumerator WaitAndSell()
     {
         yield return new WaitForSeconds(2f);
-
+        while (waitForEndOfDiscard)
+            yield return new WaitForSeconds(1f);
         for (int j = 0; j < 3; j++)
         {
             for (int i = 0; i < m_ListOfPlayers.Count; i++)
@@ -576,6 +604,9 @@ public class Boardmanager : MonoBehaviour {
 
     IEnumerator WaitAndStartTurn()
     {
+        while (waitForEndOfDiscard)
+            yield return new WaitForSeconds(0.5f);
+
         yield return new WaitForSeconds(3f);
         StartTurn();
     }

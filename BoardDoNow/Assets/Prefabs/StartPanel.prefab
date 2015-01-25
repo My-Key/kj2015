@@ -173,7 +173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &192838
 GameObject:
   m_ObjectHideFlags: 1
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 70e9c3b12148ea1409cb3c466853d7d4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bd4ce8d8e30d7db448a6a951ff6cdfdb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -384,7 +384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 6e85398e2d1e7484c9e961cabfaf4768, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bd4ce8d8e30d7db448a6a951ff6cdfdb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -542,7 +542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 6e85398e2d1e7484c9e961cabfaf4768, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bd4ce8d8e30d7db448a6a951ff6cdfdb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -605,7 +605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 6e85398e2d1e7484c9e961cabfaf4768, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bd4ce8d8e30d7db448a6a951ff6cdfdb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -753,7 +753,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 192842}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05f50f002f2bdf2499f897256c0ce287, type: 3}
+  m_Script: {fileID: 11500000, guid: c4b4b0559b794934d8319a5d9a99df1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Panel: {fileID: 22431458}
@@ -761,6 +761,8 @@ MonoBehaviour:
   m_EndPosition: {x: 0, y: 0, z: 0}
   m_ShowTime: 1
   m_HideTime: 1
+  startButton: {fileID: 131454}
+  resumeButton: {fileID: 192836}
 --- !u!114 &11492844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -774,7 +776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: f9b66d30da8d80d4591a5f6e242de772, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a0676bf2dbcef294abf236f34967bef0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

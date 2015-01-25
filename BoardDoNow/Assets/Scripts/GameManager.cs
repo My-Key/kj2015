@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 
     public Image m_FadeBlack;
 
-    public Panel m_StartGamePanel;
+    public StartResumePanel m_StartGamePanel;
     public GameObject m_Manor;
 
     public GameObject m_Board;
@@ -39,27 +39,12 @@ public class GameManager : MonoBehaviour
         
   	}
 	
-	// Update is called once per frame
-	/*void Update () 
-    {
-
-	}*/
-
 
     void ShowStartGame()
     {
         m_StartGamePanel.Show(true);
         m_Manor.SetActive(true);
     }
-
-
-    void ResetGame()
-    {
-
-    }
-
-
-
 
 
     public void QuitGame()
@@ -72,7 +57,6 @@ public class GameManager : MonoBehaviour
     {
         m_StartGamePanel.Hide(false);
         StartCoroutine(InitializeGame());
-        
     }
 
 
@@ -92,8 +76,17 @@ public class GameManager : MonoBehaviour
 
     public void MenuButton()
     {
-
+        Boardmanager.waitForEndOfDiscard = true;
+        m_StartGamePanel.Show();
     }
+
+    public void ResumeButton()
+    {
+        Boardmanager.waitForEndOfDiscard = false;
+        m_StartGamePanel.Hide(true);
+    }
+
+
 
     public void SoundButtonButton()
     {
@@ -121,10 +114,6 @@ public class GameManager : MonoBehaviour
     }
 
 
-
-
-
-
     public void Fade(float value, float time)
     {
         m_FadeBlack.gameObject.SetActive(true);
@@ -141,20 +130,4 @@ public class GameManager : MonoBehaviour
     }
 
 
-
-
-
-
-
-
-
-
-
-    enum GameState
-    {
-        Start,
-        Menu,
-        Playing,
-        Paused
-    }
 }

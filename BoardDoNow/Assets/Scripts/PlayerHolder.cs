@@ -31,7 +31,6 @@ public class PlayerHolder
 
     public void ResetPlayer()
     {
-        Debug.Log("ResetPlayer");
         m_score = 0;
         m_greeenCardsSell = 0;
         childCards = new List<int>();
@@ -77,13 +76,11 @@ public class PlayerHolder
 
     void AddChildCard(int card)
     {
-        Debug.Log("AddChildCard" + card);
         childCards.Add(card);
         if (childCards.Count > 1)
         {
             NeedToRemoveCard(childCards, Person.Child);
         }
-        Debug.Log("AddChildCard" + card + "|" + childCards.Count);
     }
 
     void AddLadyCard(int card)
@@ -267,7 +264,7 @@ public class PlayerHolder
 
         if (m_score < 0)
             m_score = 0;
-        m_scoreText.text = m_score + " $";
+        m_scoreText.text = m_score + "M $";
 
     }
 
