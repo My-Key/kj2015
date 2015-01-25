@@ -25,6 +25,7 @@ public class Boardmanager : MonoBehaviour {
 
 	public Panel m_RollPanel;
 	public DiscardPanel m_DiscardPanel;
+	public EndPanel m_EndPanel;
 
     public GameObject cammerdinerGo;
     public Vector3 cammedrinerStart;
@@ -95,8 +96,11 @@ public class Boardmanager : MonoBehaviour {
 
     public void GiveBackCard(int id)
     {
-        Debug.Log("GiveBackCard " + id + " available " + items[id].available);
-        items[id].available = true;
+		if (id >= 0 && id < items.Count)
+		{
+			Debug.Log ("GiveBackCard " + id + " available " + items [id].available);
+			items [id].available = true;
+		}
     }
     
 
@@ -143,7 +147,7 @@ public class Boardmanager : MonoBehaviour {
 
         if (currentTurn > maxTurns)
         {
-            Debug.Log("ProcessEndGame");
+			m_EndPanel.Show(false, DidPlayerWin(), m_ListOfPlayers[0].m_score);
         }
         else
         {
@@ -159,6 +163,31 @@ public class Boardmanager : MonoBehaviour {
             m_RollPanel.Show(true);
         }
     }
+
+	public bool DidPlayerWin()
+	{
+		int playerScore = m_ListOfPlayers [0].m_score;
+		int maxEnemiesScore = 0;
+
+		for (int i=1; i < m_ListOfPlayers.Count; i++)
+		{
+			maxEnemiesScore = Mathf.Max(maxEnemiesScore, m_ListOfPlayers[i].m_score);
+		}
+
+		if (playerScore == maxEnemiesScore)
+		{
+			playerScore = m_ListOfPlayers[0].m_greeenCardsSell;
+			maxEnemiesScore = 0;
+			for (int i=1; i < m_ListOfPlayers.Count; i++)
+			{
+				maxEnemiesScore = Mathf.Max(maxEnemiesScore, m_ListOfPlayers[i].m_greeenCardsSell);
+			}
+
+			return playerScore >= maxEnemiesScore;
+		}
+
+		return playerScore > maxEnemiesScore;
+	}
 
 
     public void RollSeen()
